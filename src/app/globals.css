@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: poppins-300;
+  src: url("../../public/fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: poppins-400;
+  src: url("../../public/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: poppins-500;
+  src: url("../../public/fonts/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: poppins-600;
+  src: url("../../public/fonts/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: poppins-700;
+  src: url("../../public/fonts/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: roboto-300;
+  src: url("../../public/fonts/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: roboto-400;
+  src: url("../../public/fonts/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: roboto-500;
+  src: url("../../public/fonts/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: roboto-700;
+  src: url("../../public/fonts/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: roboto-800;
+  src: url("../../public/fonts/Roboto-Black.ttf");
+}
+@font-face {
+  font-family: play-fair-700;
+  src: url("../../public/fonts/PlayfairDisplay-Bold.ttf");
+}
+
+:root {
+  --color-red: #dc1d28;
+  --color-dark-red: #91131b;
+  --color-red-32: rgba(220, 29, 40, 3.2);
+  --color-red-80: #dc1d28cf; /*rgba(220, 29, 40, 8) */
+  --color-whitesmoke: #f9f9f9;
+  --color-black: #000000;
+  --color-black-content: #1e1e1e;
+  --color-white-content: #8e939f;
+  --color-black-45: rgba(0, 0, 0, 0.45);
+  --color-black-05: rgba(0, 0, 0, 0.05);
+  --color-black-10: rgba(0, 0, 0, 0.1);
+  --color-gret: #858185;
+  --color-gret-28: rgba(133, 129, 133, 0.28);
+  --color-white: #ffffff;
+  --color-white-200: rgba(255, 255, 255, 0.2);
+  --color-borderGray: #e0e0e0;
+  --font-poppins-300: poppins-300;
+  --font-poppins-400: poppins-400;
+  --font-poppins-500: poppins-500;
+  --font-poppins-700: poppins-700;
+  --font-roboto-800: roboto-800;
+  --font-roboto-500: roboto-500;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+@layer base {
+  h1 {
+    @apply font-rob800;
+  }
+  h2 {
+    @apply font-rob400;
+  }
+  h3 {
+    @apply font-rob300;
+  }
+  h4 {
+    @apply font-pop700;
+  }
+  h5 {
+    @apply font-pop600;
+  }
+  h6 {
+    @apply font-pop400;
+  }
+  p {
+    @apply font-pop300;
+  }
+  input {
+    @apply font-pop400;
+  }
+  input:focus {
+    outline: none;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* ul{
+    padding: 0;
+    margin: 0;
+  }
+  li::marker{
+    text-align-last: center;
+  } */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-shadow {
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: white;
+    color: transparent;
+  }
+  .h-line {
+    position: relative;
+  }
+  .h-line::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .bg-clip-path-1 {
+    clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+
+  @media screen(lg) {
+    .bg-clip-path-1 {
+      clip-path: polygon(50% 20%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+  }
+  /* 
+  .vertical-lines-background {
+    background: linear-gradient(90deg, #fff calc(100% - 1px), #e7e7e7 0);
+    background-size: calc((100% - 1 * 50px) / 5 + 50px) 100%;
+  } */
+
+  /* .button-red::before {
+    position: absolute;
+    background-color: var(--color-whitesmoke);
+    border-radius: 100px;
+    content: "";
+    width: 5px;
+    height: 5px;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.6s;
+    z-index: -1;
+    transform-origin: center;
+  }
+  .button-red:hover {
+    color: #000000;
+    transition: all 0.6s;
+    background-color: var(--color-whitesmoke);
+  }
+
+  .button-red:hover::before {
+    transition: all 0.6s;
+    opacity: 1;
+    transform: scale(50);
+    
+  } */
+}
