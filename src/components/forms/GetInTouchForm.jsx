@@ -4,15 +4,149 @@ import { cn } from "@/lib/utils";
 import { useContext, useState, useRef } from "react";
 import { contactSchema } from "@/lib/forms/downloadGuideSchema";
 import { DesignContext } from "@/context/design";
-import { Form } from "./Form";
+import { date } from "zod";
 
 const GetInTouchForm = ({ title, detail, className }) => {
   const [quoteFile, setQuoteFile] = useState(null);
+  const [form, updateForm] = useState({ disabled: false, message: "" });
+
   const uploadFile = useRef("");
   const {
     theme: { button },
-    form,
   } = useContext(DesignContext);
+
+  const getFormValues = (form) => ({
+    name: form.name.value,
+    email: form.email.value,
+    subject: form.subject.value,
+    message: form.message.value.trim(),
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = getFormValues(e.target);
+    try {
+      updateForm({
+        message: "",
+        disabled: true,
+      });
+
+      contactSchema.parse(formData);
+      let attachmentLink = null;
+
+      // Upload File
+
+      if (uploadFile.current?.files[0]?.type === "application/pdf") {
+        const formDataImage = new FormData();
+        formDataImage.append("file", uploadFile.current.files[0], uploadFile.current.files[0].fileName);
+        formDataImage.append("expires", "2024-04-26T00:00:00Z");
+        formDataImage.append("autoDelete", "true");
+
+        const fileIo = await fetch("https://file.io/", {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            Authorization: "Bearer cf0c90ad-e01e-454b-aef9-e98e6d46d2b4",
+          },
+          body: formDataImage,
+          redirect: "follow",
+        });
+
+        if (fileIo.status === 200) {
+          let data = await fileIo.json();
+          attachmentLink = data.link;
+
+          console.log({ attachmentLink });
+        } else {
+          updateForm({
+            message: "Did not fetch the details",
+            disabled: false,
+          });
+        }
+      }
+
+      // For Admin
+      const toAdminEmail = process.env.NEXT_PUBLIC_TO_ADMIN_EMAIL;
+
+      const formAdmin = {
+        email: toAdminEmail,
+        title: `New Submission of Contact Form`,
+        text: `The details of Form Submission: \n ${JSON.stringify(formData)} 
+        \n ${attachmentLink ? `File Attached: ${attachmentLink}` : ""}
+        `,
+        html: `
+          The details of submission below: <br /><br /> ${Object.keys(formData)
+            .map((key) => {
+              return `<span>${key}</span>: <span>${formData[key]}</span><br />`;
+            })
+            .join("\n")} 
+          ${attachmentLink ? `<br />File Attached: ${attachmentLink}` : ""}
+          `,
+      };
+
+      // For User
+      const userForm = {
+        email: formData.email.trim(),
+        title: "We recieved your submission",
+        text: `Thank you for your submission.`,
+        html: `<strong> Thank you for your submission </strong>`,
+      };
+
+      const responseAll = await Promise.all([
+        fetch("/api/downloadGuide", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formAdmin),
+        }),
+        fetch("/api/downloadGuide", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userForm),
+        }),
+      ]);
+
+      if (responseAll[0].ok && responseAll[1].ok) {
+        const data = await responseAll[0].json();
+        updateForm({
+          message: data.message,
+          disabled: false,
+        });
+
+        e.target.reset();
+        setQuoteFile(null);
+
+        setTimeout(() => {
+          updateForm({
+            message: "",
+            disabled: false,
+          });
+        }, 3000);
+      } else {
+        updateForm({
+          message: "Did not fetch the details",
+          disabled: false,
+        });
+      }
+    } catch (e) {
+      console.log(e);
+      const error = JSON?.parse(e);
+      if (error?.length && error[0]?.message) {
+        updateForm({
+          message: error[0].message,
+          disabled: false,
+        });
+      } else {
+        updateForm({
+          message: "Something wrong please check your fields",
+          disabled: false,
+        });
+      }
+    }
+  };
 
   const handleOpenFile = (e) => {
     e.preventDefault();
@@ -26,13 +160,6 @@ const GetInTouchForm = ({ title, detail, className }) => {
     setQuoteFile(null);
   };
 
-  const getFormValues = (form) => ({
-    name: form.name.value,
-    email: form.email.value,
-    subject: form.subject.value,
-    message: form.message.value.trim(),
-  });
-
   return (
     <div
       className={cn(
@@ -45,13 +172,7 @@ const GetInTouchForm = ({ title, detail, className }) => {
       <p className="font-pop400 text-black-content text-xs lg:text-sm mb-3 w-[80%] mx-auto md:w-full">
         {detail}
       </p>
-      <Form
-        formSchema={contactSchema}
-        getFormValues={getFormValues}
-        url="/api/downloadGuide"
-        subject={"Get In Touch Form Submited"}
-        subjectForAdmin="Someone request for support"
-      >
+      <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <input
             type="text"
@@ -90,11 +211,12 @@ const GetInTouchForm = ({ title, detail, className }) => {
             placeholder="Message"
           />
         </div>
-        {/* <div className="mb-4">
+        <div className="mb-4">
           <input
             ref={uploadFile}
             type="file"
             id="uploadFile"
+            accept="application/pdf"
             className="w-0 h-0 hidden"
             onChange={handleFileChnage}
           />
@@ -140,18 +262,18 @@ const GetInTouchForm = ({ title, detail, className }) => {
               ? quoteFile.name
               : "Upload supported file (Max 15MB)"}
           </small>
-        </div> */}
+        </div>
 
         <AnimateButton
           disabled={form.disabled}
           className={`${button.red} w-full before:bg-primary hover:bg-primary`}
         >
-          Send
+          {form.disabled ? "Submiting..." : "Submit"}
         </AnimateButton>
         {form?.message && (
-          <p className="text-primary w-full text-center">{form.message}</p>
+          <p className="text-primary w-full text-center my-2">{form.message}</p>
         )}
-      </Form>
+      </form>
       {/* </form> */}
     </div>
   );

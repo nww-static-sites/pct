@@ -35,7 +35,6 @@ export const contactSchema = z.object({
   email: z.string().email("Email is not valid"),
   subject: z.string().min(1, "Subhect is required"),
   message: z.string().min(1, "Message is required"),
-  
 });
 
 export const applicationSchema = z.object({

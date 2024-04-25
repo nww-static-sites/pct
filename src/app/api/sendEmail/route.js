@@ -4,26 +4,32 @@ const sgMail = require("@sendgrid/mail");
 
 export async function POST(req) {
   const body = await req.json();
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-  // 
- 
-  const msg = {
-    "to": "muhammad.hamza.strugbits@gmail.com",
-    "from": process.env.SENDER_EMAIL_ADDRESS,//process.env.SENDER_EMAIL_ADDRESS, // Use the email address or domain you verified above
-    "subject": "Test",
-    "text": "TESTING",
-    "html": "<strong> TESTING </strong>",
-  };
 
-  return sgMail.send(msg).then(
-    () => {
-      return NextResponse.json({ message: "Email sent successfully" });
-    },
-    (error) => {
+//   const fileIo = 
+  
 
-      if (error.response) {
-        return NextResponse.json({ message: error.response.body });
-      }
-    }
-  );
+// }
+
+
+// const myHeaders = new Headers();
+// myHeaders.append("accept", "application/json");
+// myHeaders.append("Authorization", "Bearer cf0c90ad-e01e-454b-aef9-e98e6d46d2b4");
+
+// const formdata = new FormData();
+// formdata.append("file", fileInput.files[0], "[PROXY]");
+// formdata.append("expires", "2024-04-26T00:00:00Z");
+// formdata.append("autoDelete", "true");
+
+// const requestOptions = {
+//   method: "POST",
+//   headers: myHeaders,
+//   body: formdata,
+//   redirect: "follow"
+// };
+
+// fetch("https://file.io/", requestOptions)
+//   .then((response) => response.text())
+//   .then((result) => console.log(result))
+//   .catch((error) => console.error(error));
+
 }

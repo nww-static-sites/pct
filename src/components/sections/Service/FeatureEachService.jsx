@@ -50,7 +50,7 @@ const FetureEachService = ({
           </ul>
           <Image
             src={image}
-            className="max-w-[424px] h-full mx-auto"
+            className="w-full md:max-w-[424px] md:h-full mx-auto"
             alt=""
             width={424}
             height={678}
