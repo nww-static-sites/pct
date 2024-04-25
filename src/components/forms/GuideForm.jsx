@@ -81,7 +81,7 @@ const GuideForm = ({ title, detail, className }) => {
         <div className="mb-4">
           <input
             type="text"
-            id="firstName *"
+            id="firstName"
             required
             className="rounded-[4px] w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-secondary"
             placeholder="First Name *"

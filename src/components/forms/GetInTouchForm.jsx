@@ -4,13 +4,13 @@ import { cn } from "@/lib/utils";
 import { useContext, useState, useRef } from "react";
 import { contactSchema } from "@/lib/forms/downloadGuideSchema";
 import { DesignContext } from "@/context/design";
-import { date } from "zod";
 
 const GetInTouchForm = ({ title, detail, className }) => {
   const [quoteFile, setQuoteFile] = useState(null);
   const [form, updateForm] = useState({ disabled: false, message: "" });
 
   const uploadFile = useRef("");
+
   const {
     theme: { button },
   } = useContext(DesignContext);
@@ -36,17 +36,18 @@ const GetInTouchForm = ({ title, detail, className }) => {
 
       // Upload File
 
-      if (uploadFile.current?.files[0]?.type === "application/pdf") {
+      if (uploadFile.current?.files[0]?.type) {
         const formDataImage = new FormData();
         formDataImage.append("file", uploadFile.current.files[0], uploadFile.current.files[0].fileName);
         formDataImage.append("expires", "2024-04-26T00:00:00Z");
         formDataImage.append("autoDelete", "true");
 
+        const fileIOKey = process.env.NEXT_PUBLIC_TO_FILE_IO_KEY;
         const fileIo = await fetch("https://file.io/", {
           method: "POST",
           headers: {
             accept: "application/json",
-            Authorization: "Bearer cf0c90ad-e01e-454b-aef9-e98e6d46d2b4",
+            Authorization: `Bearer ${fileIOKey}`,
           },
           body: formDataImage,
           redirect: "follow",
@@ -216,7 +217,6 @@ const GetInTouchForm = ({ title, detail, className }) => {
             ref={uploadFile}
             type="file"
             id="uploadFile"
-            accept="application/pdf"
             className="w-0 h-0 hidden"
             onChange={handleFileChnage}
           />
