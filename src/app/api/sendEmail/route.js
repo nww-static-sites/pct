@@ -20,7 +20,6 @@ export async function POST(req) {
       return NextResponse.json({ message: "Email sent successfully" });
     },
     (error) => {
-      console.error(error);
 
       if (error.response) {
         return NextResponse.json({ message: error.response.body });

@@ -69,7 +69,6 @@ export const Form = ({
 
       if (responseAll[0].ok && responseAll[1].ok) {
         const data = await responseAll[0].json();
-        console.log({ data });
         updateForm({
           message: data.message,
           disabled: false,
@@ -84,14 +83,12 @@ export const Form = ({
           });
         }, 3000);
       } else {
-        console.log(responseAll);
         updateForm({
           message: "Did not fetch the details",
           disabled: false,
         });
       }
     } catch (e) {
-      console.log(JSON.parse(e));
       const error = JSON.parse(e);
       if (error?.length && error[0]?.message) {
         updateForm({

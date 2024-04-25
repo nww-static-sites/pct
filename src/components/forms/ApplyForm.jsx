@@ -4,13 +4,16 @@ import { cn } from "@/lib/utils";
 import React, { useContext, useState, useRef } from "react";
 import { DesignContext } from "@/context/design";
 import Modal from "../Modals/ApplyModals/ApplyModal";
+import { applicationSchema } from "@/lib/forms/downloadGuideSchema";
 import Input from "../Input";
+import { Form } from "./Form";
 
 const ApplyForm = ({ formTitle, detail, className }) => {
   const [quoteFile, setQuoteFile] = useState(null);
   const uploadFile = useRef("");
   const {
     theme: { button },
+    form,
   } = useContext(DesignContext);
 
   const handleOpenFile = (e) => {
@@ -25,6 +28,14 @@ const ApplyForm = ({ formTitle, detail, className }) => {
     setQuoteFile(null);
   };
 
+  const getFormValues = (form) => ({
+    firstName: form.firstName.value,
+    lastName: form.lastName.value,
+    email: form.email.value,
+    phoneNumber: form.phoneNumber.value.trim(),
+    link: form.link.value.trim(),
+  });
+
   return (
     <div
       className={cn(
@@ -36,7 +47,13 @@ const ApplyForm = ({ formTitle, detail, className }) => {
         {`Apply for ${formTitle}`}
       </h1>
 
-      <form>
+      <Form
+        formSchema={applicationSchema}
+        getFormValues={getFormValues}
+        url="/api/downloadGuide"
+        subject={`Application Form for ${formTitle} Recieved`}
+        subjectForAdmin={`Submission of New Application for ${formTitle}`}
+      >
         <div className="grid gap-3 md:gap-6 mb-6 grid-cols-2">
           <Input
             type="text"
@@ -98,7 +115,7 @@ const ApplyForm = ({ formTitle, detail, className }) => {
             boxClassName={"col-span-2"}
           />
 
-          <div className="mb-4 col-span-2">
+          {/* <div className="mb-4 col-span-2">
             <Input
               ref={uploadFile}
               type="file"
@@ -126,15 +143,20 @@ const ApplyForm = ({ formTitle, detail, className }) => {
                 ? quoteFile.name
                 : "Upload supported file (Max 15MB)"}
             </small>
-          </div>
+          </div> */}
         </div>
 
         <AnimateButton
           className={`${button.red} w-full before:bg-primary hover:bg-primary`}
+          disabled={form.disabled}
         >
           Apply
         </AnimateButton>
-      </form>
+
+        {form?.message && (
+          <p className="text-primary w-full text-center my-2">{form.message}</p>
+        )}
+      </Form>
     </div>
   );
 };

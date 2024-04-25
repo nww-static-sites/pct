@@ -23,19 +23,11 @@ export async function POST(req) {
       return NextResponse.json({ message: "Email sent successfully" });
     },
     (error) => {
-      console.error(error);
 
       if (error.response) {
         return NextResponse.error({ message: "Did not fetch the details", error: error.response.body });
       }
     }
   );
-    // return NextResponse.json({ message: "Form Submitted Successfully", body });
-  // try {
-  //   // const validated = downloadGuideSchema.parse(body);
-
-  // } catch (e) {
-  //   console.error(e);
-  //   return NextResponse.json({ message: e });
-  // }
+    
 }
