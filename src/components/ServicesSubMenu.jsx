@@ -12,7 +12,6 @@ export const SubMenu = () => {
   const {
     data: { ourServices },
   } = useContext(DesignContext);
-  console.log({ ourServices });
   const route = useRouter();
   return (
     <div className="absolute z-10 mt-6 left-0 w-full mx-auto overflow-hidden bg-primary px-6 py-8">

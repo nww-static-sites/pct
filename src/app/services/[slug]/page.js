@@ -8,7 +8,6 @@ export const metadata = {
 };
 
 export default function ServicePage({ params: { slug } }) {
-  console.log(slug);
   return (
     <Fragment>
       <Service slug={slug} />

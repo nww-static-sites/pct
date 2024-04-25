@@ -135,7 +135,7 @@ const WhatWeOffer = () => {
             }
           </p>
           <HorizontalGuideForm />
-          <div className="">
+          <div className="hidden lg:block">
             <Image
               src="/images/shapes.svg"
               className="w-auto h-full absolute top-0 right-0 max-w-[440px] md:max-w-[663px]"

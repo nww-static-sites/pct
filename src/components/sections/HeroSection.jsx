@@ -4,10 +4,11 @@ import { cn } from "@/lib/utils";
 const HeroSection = ({ children, videoSrc, bgImage, className, col }) => {
   const style = bgImage
     ? {
-        background: `url(${bgImage})`,
-        backgroundRepeat: "no-repeat",
-        backgrondPosition: "center",
-        backgroundSize: "cover",
+      background: `url(${bgImage})`,
+      backgroundRepeat: "no-repeat",
+      backgrondPosition: "center",
+      backgroundSize: "cover",
+      backgroundColor: "var(--color-black)",
       }
     : {};
 
@@ -16,7 +17,7 @@ const HeroSection = ({ children, videoSrc, bgImage, className, col }) => {
       style={style}
       className={cn(
         "min-h-[628px] flex relative py-10 items-center justify-center",
-        className && className,
+        className && className
       )}
     >
       <FullWidthContent className={"w-full"}>

@@ -12,6 +12,9 @@ const GuideForm = ({ title, detail, className }) => {
     form,
   } = useContext(DesignContext);
 
+  // const [isDisabled, setIsDisabled] = useState(false);
+  // const [message, setMessage] = useState("");
+
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
   //   const formData = {
@@ -32,7 +35,8 @@ const GuideForm = ({ title, detail, className }) => {
   //       },
   //       body: JSON.stringify(formData),
   //     });
-  //     const data = await response.json();
+  //     console.log(response.body);
+  //     const data = await response.text();
   //     if (data.message) {
   //       setMessage(data.message);
   //       setIsDisabled(false);
@@ -43,6 +47,7 @@ const GuideForm = ({ title, detail, className }) => {
   //       }, 3000);
   //     }
   //   } catch (e) {
+  //     console.log(e);
   //     const error = JSON.parse(e);
   //     setMessage(error[0].message);
   //     setIsDisabled(false);
@@ -69,8 +74,10 @@ const GuideForm = ({ title, detail, className }) => {
         formSchema={downloadGuideSchema}
         getFormValues={getFormValues}
         url="/api/downloadGuide"
-        title={title}
+        subject={title}
+        subjectForAdmin="Download Guide"
       >
+      {/* <form onSubmit={handleSubmit}> */}
         <div className="mb-4">
           <input
             type="text"
@@ -115,7 +122,7 @@ const GuideForm = ({ title, detail, className }) => {
           )}
         </div>
         <AnimateButton
-          disabled={form?.disabled}
+          disabled={form.disabled}
           className={`${button.icon} ${button.red} w-full before:bg-secondary hover:bg-secondary hover:text-primary`}
         >
           Download Guide
@@ -149,6 +156,7 @@ const GuideForm = ({ title, detail, className }) => {
             </svg>
           )}
         </AnimateButton>
+        {/* </form> */}
       </Form>
       {/* <form onSubmit={handleSubmit}>
         

@@ -24,7 +24,6 @@ export default function Service({ slug }) {
     return data[0];
   }, [ourServices, slug]);
 
-  console.log(service);
   const {page:{hero, coating, features}} = service
 
   if (service.page) {

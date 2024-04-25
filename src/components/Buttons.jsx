@@ -8,14 +8,14 @@ export const AnimateButton = ({ children, className, ...props }) => {
         "px-8 py-2 md:px-12 md:py-3 rounded-md text-[16px] transition-all duration-500 relative z-[1] overflow-hidden",
         "before:absolute before:rounded-full before:w-[5px] before:h-[5px] before:-bottom-[20px] before:left-[50%] before:transition-all before:duration-500 before:-z-[1] before:-translate-x-[50%]",
         "hover:before:scale-[50]",
-        "disabled:bg-gret disabled:hover:before:scale-[0] disabled:text-black-content "
-      )}
-      {...props}
-    >
+        )}
+        {...props}
+        >
       {children}
     </button>
   );
 };
+// "disabled:bg-gret disabled:hover:before:scale-[0] disabled:text-black-content "
 
 export const SlideColorButton = ({ children, className, ...props }) => {
   return (

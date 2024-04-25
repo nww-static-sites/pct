@@ -6,6 +6,7 @@ const Input = ({
   id,
   className,
   boxClassName,
+  labelColor,
   ...props
 }) => {
   return (
@@ -13,8 +14,8 @@ const Input = ({
       <div className="flex flex-col space-y-1 text-left">
         {props.label && (
           <label
-            className={props.labelColor ? props.labelColor : "text-secondary"}
-            forHtml={props.id}
+            className={labelColor ? labelColor : "text-secondary"}
+            htmlFor={props.id}
           >
             {props.label}
             {props.required && <span className="text-red">{" *"}</span>}

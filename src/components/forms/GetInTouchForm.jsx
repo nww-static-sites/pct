@@ -2,13 +2,16 @@
 import { AnimateButton } from "../Buttons";
 import { cn } from "@/lib/utils";
 import { useContext, useState, useRef } from "react";
+import { contactSchema } from "@/lib/forms/downloadGuideSchema";
 import { DesignContext } from "@/context/design";
+import { Form } from "./Form";
 
 const GetInTouchForm = ({ title, detail, className }) => {
   const [quoteFile, setQuoteFile] = useState(null);
   const uploadFile = useRef("");
   const {
     theme: { button },
+    form,
   } = useContext(DesignContext);
 
   const handleOpenFile = (e) => {
@@ -23,6 +26,13 @@ const GetInTouchForm = ({ title, detail, className }) => {
     setQuoteFile(null);
   };
 
+  const getFormValues = (form) => ({
+    name: form.name.value,
+    email: form.email.value,
+    subject: form.subject.value,
+    message: form.message.value.trim(),
+  });
+
   return (
     <div
       className={cn(
@@ -32,8 +42,16 @@ const GetInTouchForm = ({ title, detail, className }) => {
     >
       <h2 className="text-red text-xs md:text-sm">GET IN TOUCH</h2>
       <h1 className="text-3xl lg:text-4xl mb-1">{title}</h1>
-      <p className="font-pop400 text-black-content text-xs lg:text-sm mb-3 w-[80%] mx-auto md:w-full">{detail}</p>
-      <form>
+      <p className="font-pop400 text-black-content text-xs lg:text-sm mb-3 w-[80%] mx-auto md:w-full">
+        {detail}
+      </p>
+      <Form
+        formSchema={contactSchema}
+        getFormValues={getFormValues}
+        url="/api/downloadGuide"
+        subject={"Get In Touch Form Submited"}
+        subjectForAdmin="Someone request for support"
+      >
         <div className="mb-4">
           <input
             type="text"
@@ -46,6 +64,8 @@ const GetInTouchForm = ({ title, detail, className }) => {
           <input
             type="email"
             id="email"
+            name="email"
+            required
             className="rounded-[4px] w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
             placeholder="Email*"
           />
@@ -54,6 +74,8 @@ const GetInTouchForm = ({ title, detail, className }) => {
           <input
             type="text"
             id="subject"
+            name="subject"
+            required
             className="rounded-[4px] w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
             placeholder="Subject"
           />
@@ -62,11 +84,13 @@ const GetInTouchForm = ({ title, detail, className }) => {
           <input
             type="text"
             id="message"
+            name="message"
+            required
             className="rounded-[4px] w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
             placeholder="Message"
           />
         </div>
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <input
             ref={uploadFile}
             type="file"
@@ -116,14 +140,19 @@ const GetInTouchForm = ({ title, detail, className }) => {
               ? quoteFile.name
               : "Upload supported file (Max 15MB)"}
           </small>
-        </div>
+        </div> */}
 
         <AnimateButton
+          disabled={form.disabled}
           className={`${button.red} w-full before:bg-primary hover:bg-primary`}
         >
           Send
         </AnimateButton>
-      </form>
+        {form?.message && (
+          <p className="text-primary w-full text-center">{form.message}</p>
+        )}
+      </Form>
+      {/* </form> */}
     </div>
   );
 };

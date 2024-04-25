@@ -33,7 +33,7 @@ const ApplyForm = ({ formTitle, detail, className }) => {
       )}
     >
       <h1 className="font-rob500 text-red mb-5 text-xl md:text-2xl text-center">
-        {formTitle}
+        {`Apply for ${formTitle}`}
       </h1>
 
       <form>

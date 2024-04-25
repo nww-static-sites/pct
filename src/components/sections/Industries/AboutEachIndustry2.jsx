@@ -34,7 +34,6 @@ const AboutEachIndustry2 = ({
   const [manualDetail, setManualDetail] = useState(elastomersDetails[0].detail);
   const [active, setActive] = useState(elastomersDetails[0].buttonText);
   const handleDetailToggle = (item) => {
-    console.log("item");
     setManualDetail(item.detail);
     setActive(item.buttonText);
   };

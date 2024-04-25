@@ -7,12 +7,18 @@ import { DesignContext } from "@/context/design";
 import Input from "./Input";
 import { Button } from "./Buttons";
 import { MobServicesSubMenu } from "./ServicesSubMenu";
+import { newsLetterGuide } from "@/lib/forms/downloadGuideSchema";
+import { Form } from "./forms/Form";
 
 const Footer = () => {
   const {
     data: { footerSocialList },
     theme: { button },
+    form,
   } = useContext(DesignContext);
+  const getFormValues = (form) => ({
+    email: form.email.value,
+  });
   return (
     <div className="bg-primary text-secondary">
       {/* Contact Row */}
@@ -35,7 +41,11 @@ const Footer = () => {
             height={21}
             className="w-[22px] md:w-[29px] h-auto"
           />
-          <p><Link href="mailto:info@paracoattechnology.ca">info@paracoattechnology.ca</Link></p>
+          <p>
+            <Link href="mailto:info@paracoattechnology.ca">
+              info@paracoattechnology.ca
+            </Link>
+          </p>
         </div>
         <div className="flex items-center justify-start md:justify-center gap-x-4 py-3 md:py-4 px-3">
           <Image
@@ -46,8 +56,12 @@ const Footer = () => {
             className="w-[20px] md:w-[33px] h-auto"
           />
           <div className="flex items-center justify-start md:justify-center flex-wrap gap-x-4 gap-y-1">
-            <p className="w-[max-content]"><Link href={"tel:8142544376"}>Tel: (814) 254-4376</Link></p>
-            <p><Link href={"fax:8142544057"}>Fax: (814) 254-4057</Link></p>
+            <p className="w-[max-content]">
+              <Link href={"tel:8142544376"}>Tel: (814) 254-4376</Link>
+            </p>
+            <p>
+              <Link href={"fax:8142544057"}>Fax: (814) 254-4057</Link>
+            </p>
           </div>
         </div>
       </div>
@@ -85,7 +99,6 @@ const Footer = () => {
               <div className="flex flex-col gap-y-4">
                 <h2 className="text-[22px] mb-1 text-white">Services</h2>
                 <MobServicesSubMenu addClass="font-rob500 text-white-content" />
-                
               </div>
             </div>
           </div>
@@ -96,29 +109,47 @@ const Footer = () => {
               <p className="text-lg font-rob500 mb-4 text-white-content">
                 Get latest updates and offers.
               </p>
-              <div className="ring-1 ring-gret28 rounded-md flex items-center mb-4">
-                <Input
-                  className="ring-0 bg-transparent placeholder:text-gret"
-                  type="text"
-                  placeholder="Enter your email address"
-                />
-                <Button
-                  className={`w-[54px] h-[54px] bg-red ${button.icon} rounded-r-md`}
-                >
-                  <svg
-                    width="18"
-                    height="19"
-                    viewBox="0 0 18 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+              <Form
+                formSchema={newsLetterGuide}
+                getFormValues={getFormValues}
+                url="/api/downloadGuide"
+                subject={"You subscribed to PCT Newsletter"}
+                subjectForAdmin="New Subscriber"
+              >
+                <div className="ring-1 ring-gret28 rounded-md flex items-center mb-4">
+                  <Input
+                    className="ring-0 bg-transparent placeholder:text-gret h-[54px]"
+                    type="email"
+                    name="email"
+                    required
+                    id={"email"}
+                    placeholder="Enter your email address"
+                  />
+                  <Button
+                    disabled={form.disabled}
+                    className={`w-[54px] h-[54px] bg-red ${button.icon} rounded-r-md`}
                   >
-                    <path
-                      d="M16.6531 0.75647C17.2367 0.413147 17.9921 0.893799 17.8547 1.58044L15.3828 16.412C15.3141 16.9613 14.7305 17.2703 14.2498 17.0643L9.99264 15.2447L7.79537 17.9226C7.31472 18.5063 6.35342 18.1973 6.35342 17.3733V14.5924L14.5932 4.53302C14.7648 4.32703 14.4902 4.0867 14.3185 4.25836L4.46514 12.9444L0.79159 11.3995C0.173609 11.1591 0.104944 10.2665 0.722925 9.92319L16.6531 0.75647Z"
-                      fill="#F9F9F9"
-                    />
-                  </svg>
-                </Button>
-              </div>
+                    <svg
+                      width="18"
+                      height="19"
+                      viewBox="0 0 18 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.6531 0.75647C17.2367 0.413147 17.9921 0.893799 17.8547 1.58044L15.3828 16.412C15.3141 16.9613 14.7305 17.2703 14.2498 17.0643L9.99264 15.2447L7.79537 17.9226C7.31472 18.5063 6.35342 18.1973 6.35342 17.3733V14.5924L14.5932 4.53302C14.7648 4.32703 14.4902 4.0867 14.3185 4.25836L4.46514 12.9444L0.79159 11.3995C0.173609 11.1591 0.104944 10.2665 0.722925 9.92319L16.6531 0.75647Z"
+                        fill="#F9F9F9"
+                      />
+                    </svg>
+                  </Button>
+                </div>
+
+                {form?.message && (
+                  <p className="text-secondary w-full text-center my-2 text-xs">
+                    {form.message}
+                  </p>
+                )}
+              </Form>
               <div className="flex gap-x-4">
                 {footerSocialList.map((item) => {
                   return (
@@ -136,8 +167,17 @@ const Footer = () => {
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-start px-0 py-4 md:p6 text-white-content gap-x-4">
           <p>
-            <Link href={"#"}>Privacy Policy</Link>
-            {" | "} <Link href={"/docs/Para-Coat Technologies Terms and Conditions_Rev F.docx.pdf"} target="_blank" download>Terms of Service</Link>
+            <Link href={"/privacy-policy"}>Privacy Policy</Link>
+            {" | "}{" "}
+            <Link
+              href={
+                "/docs/Para-Coat Technologies Terms and Conditions_Rev F.docx.pdf"
+              }
+              target="_blank"
+              download
+            >
+              Terms of Service
+            </Link>
           </p>
           <p className="text-right">Copyright © 2024. All rights reserved.</p>
         </div>

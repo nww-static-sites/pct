@@ -1,15 +1,22 @@
 "use client";
 import { useContext, useState } from "react";
 import { DesignContext } from "@/context/design";
+import { cn } from "@/lib/utils";
 
-export const Form = ({ children, formSchema, getFormValues }) => {
+export const Form = ({
+  children,
+  formSchema,
+  getFormValues,
+  url,
+  subject,
+  subjectForAdmin,
+  className,
+}) => {
   const { updateForm } = useContext(DesignContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    console.log(formData.get);
-
+    const formData = await getFormValues(e.target);
     try {
       updateForm({
         message: "",
@@ -17,35 +24,91 @@ export const Form = ({ children, formSchema, getFormValues }) => {
       });
 
       formSchema.parse(formData);
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
-      if (data.message) {
+
+      // For User
+      const guideLink =
+        "https://d76caabb-7300-415b-997a-2fa56fce6466.usrfiles.com/ugd/d76caa_8255d0f6167b404dae93ef67f4f211c6.pdf";
+      const form = {
+        email: formData.email.trim(),
+        title: subject,
+        text: `Thank you for your submission, the link of your guide is: \n ${guideLink}`,
+        html: `<strong> Thank you for your submission, the link of your guide is: <br /> ${guideLink} </strong> `,
+      };
+
+      // For Admin
+      const toAdminEmail = process.env.NEXT_PUBLIC_TO_ADMIN_EMAIL;
+      const formAdmin = {
+        email: toAdminEmail,
+        title: subjectForAdmin,
+        text: `The details of Form Submission: \n ${JSON.stringify(formData)}`,
+        html: `The details of submission below: <br /><br /> ${Object.keys(
+          formData
+        )
+          .map((key) => {
+            return `<span>${key}</span>: <span>${formData[key]}</span><br />`;
+          })
+          .join("\n")}`,
+      };
+
+      const responseAll = await Promise.all([
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }),
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formAdmin),
+        }),
+      ]);
+
+      if (responseAll[0].ok && responseAll[1].ok) {
+        const data = await responseAll[0].json();
+        console.log({ data });
         updateForm({
           message: data.message,
           disabled: false,
         });
 
         e.target.reset();
+
         setTimeout(() => {
           updateForm({
             message: "",
             disabled: false,
           });
         }, 3000);
+      } else {
+        console.log(responseAll);
+        updateForm({
+          message: "Did not fetch the details",
+          disabled: false,
+        });
       }
     } catch (e) {
-    //   const error = JSON.parse(e);
-      updateForm({
-        message: "Something went wrong",
-        disabled: false,
-      });
+      console.log(JSON.parse(e));
+      const error = JSON.parse(e);
+      if (error?.length && error[0]?.message) {
+        updateForm({
+          message: error[0].message,
+          disabled: false,
+        });
+      } else {
+        updateForm({
+          message: "Something wrong please check your fields",
+          disabled: false,
+        });
+      }
     }
   };
-  return <form onSubmit={handleSubmit}>{children}</form>;
+  return (
+    <form onSubmit={handleSubmit} className={cn(className && className)}>
+      {children}
+    </form>
+  );
 };
