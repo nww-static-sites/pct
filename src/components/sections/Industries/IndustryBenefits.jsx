@@ -12,7 +12,7 @@ const IndustryBenefits = ({ title, subTitle, detail, benefits }) => {
           <h1 className="text-[28px] text-secondary md:text-5xl text-center mb-3">
             {title}
           </h1>
-          <p className="text-secondary text-center mb-16">{detail}</p>
+          <p className="text-secondary text-center mb-16 whitespace-pre-wrap">{detail}</p>
           <ul className="flex flex-col tems-center md:flex-row md:flex-wrap justify-center md:items-start gap-10">
             {benefits.length &&
               benefits.map((benefit, ind) => {

@@ -624,7 +624,7 @@ export const industriesServed = [
       benefits: {
         subTitle: "BENEFITS",
         title: "Common Conformal Coatings",
-        detail: `The five most commonly used conformal coatings are acrylic, polyurethane, silicone, epoxy and Parylene.  The chemical and physical properties of the materials differ and also offer different degrees of protection.`,
+        detail: `The five most commonly used conformal coatings are acrylic, polyurethane, silicone, epoxy and Parylene. The chemical and physical properties of the materials differ and also offer different degrees of protection.`,
         benefits: [
           {
             id: 0,
