@@ -1,28 +1,24 @@
 "use client";
 import { AnimateButton } from "../Buttons";
 import { cn } from "@/lib/utils";
-import { useContext, useState, useRef } from "react";
+import { useContext} from "react";
 import { DesignContext } from "@/context/design";
+import { downloadGuideSchema } from "@/lib/forms/downloadGuideSchema";
 import Input from "../Input";
+import { Form } from "./Form";
 
-const WelcomeDownloadGuidForm = ({ title, detail, className }) => {
-  const [quoteFile, setQuoteFile] = useState(null);
-  const uploadFile = useRef("");
+const WelcomeDownloadGuidForm = ({ title, detail, className, onClose }) => {
   const {
     theme: { button },
+    form,
   } = useContext(DesignContext);
 
-  const handleOpenFile = (e) => {
-    e.preventDefault();
-    uploadFile.current.click();
-  };
-  const handleFileChnage = (e) => {
-    const file = e.target.files[0];
-    setQuoteFile(file);
-  };
-  const handleRemove = (e) => {
-    setQuoteFile(null);
-  };
+  const getFormValues = (form) => ({
+    firstName: form.firstName.value,
+    lastName: form.lastName.value,
+    email: form.email.value,
+    phoneNumber: form.phoneNumber.value.trim(),
+  });
 
   return (
     <div
@@ -39,14 +35,21 @@ const WelcomeDownloadGuidForm = ({ title, detail, className }) => {
       <p className="font-pop400 text-black-content text-xs lg:text-sm mb-3 w-[80%] mx-auto md:w-full">
         {detail}
       </p>
-      <form>
+      <Form
+        formSchema={downloadGuideSchema}
+        getFormValues={getFormValues}
+        url="/api/downloadGuide"
+        subject={title}
+        subjectForAdmin="Download Guide"
+        onClose={onClose}
+      >
         <div className="mb-4">
           <Input
             type="text"
             id="firstName"
             label="First Name"
             name="firstName"
-            className="rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
+            className="text-primary rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
             placeholder="Your first name"
             required
             labelColor="text-primary"
@@ -58,8 +61,8 @@ const WelcomeDownloadGuidForm = ({ title, detail, className }) => {
             id="lastName"
             label="Last Name"
             name="lastName"
-            className="rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
-            placeholder="Your first name"
+            className="text-primary rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
+            placeholder="Your last name"
             required
             labelColor="text-primary"
           />
@@ -70,8 +73,8 @@ const WelcomeDownloadGuidForm = ({ title, detail, className }) => {
             id="email"
             label="Email Address"
             name="email"
-            className="rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
-            placeholder="Your first name"
+            className="text-primary rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
+            placeholder="Your email address"
             required
             labelColor="text-primary"
           />
@@ -82,19 +85,27 @@ const WelcomeDownloadGuidForm = ({ title, detail, className }) => {
             id="phoneNumber"
             label="Phone Number"
             name="phoneNumber"
-            className="rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
-            placeholder="Your first name"
+            className="text-primary rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
+            placeholder="Your phone number"
             required
             labelColor="text-primary"
           />
         </div>
+        <div className="mb-3">
+          {form?.message && (
+            <small className="text-primary w-full text-center">
+              {form.message}
+            </small>
+          )}
+        </div>
 
         <AnimateButton
+          disabled={form.disabled}
           className={`${button.red} w-full before:bg-primary hover:bg-primary`}
         >
           Download Guide
         </AnimateButton>
-      </form>
+      </Form>
     </div>
   );
 };

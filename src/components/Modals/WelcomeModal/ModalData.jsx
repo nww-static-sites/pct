@@ -1,7 +1,7 @@
 import { FullWidthContent } from "@/components/Sections";
 import Image from "next/image";
 import WelcomeDownloadGuidForm from "@/components/forms/WelcomeForm";
-const ModalData = () => {
+const ModalData = ({onClose}) => {
   return (
     <section className="">
       <FullWidthContent className="flex md:pr-0 py-8 max-w-[1920px] flex-col md:gap-10 md:flex-row">
@@ -21,6 +21,7 @@ const ModalData = () => {
             detail={
               "Fill the form to unlock valuable insights and expertise by downloading our guide for free."
             }
+            onClose={onClose}
           />
         </div>
       </FullWidthContent>

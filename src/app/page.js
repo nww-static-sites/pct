@@ -43,7 +43,7 @@ export default function Home() {
       <OurAchievements />
       <OurCertifications />
       <ContactUs />
-      {/* <WelcomeFormModal /> */}
+      <WelcomeFormModal/>
     </main>
   );
 }

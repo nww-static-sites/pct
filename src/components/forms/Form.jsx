@@ -11,6 +11,7 @@ export const Form = ({
   subject,
   subjectForAdmin,
   className,
+  onClose
 }) => {
   const { updateForm } = useContext(DesignContext);
 
@@ -75,12 +76,15 @@ export const Form = ({
         });
 
         e.target.reset();
+        onClose && localStorage.setItem("isGuideSubmitted", "true");
 
         setTimeout(() => {
           updateForm({
             message: "",
             disabled: false,
           });
+          
+          onClose && onClose()
         }, 3000);
       } else {
         updateForm({
