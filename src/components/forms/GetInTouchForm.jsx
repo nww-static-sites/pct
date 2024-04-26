@@ -38,8 +38,12 @@ const GetInTouchForm = ({ title, detail, className }) => {
 
       if (uploadFile.current?.files[0]?.type) {
         const formDataImage = new FormData();
+        const date = new Date().getDate() + 1
+        const dateAdd = new Date().setDate(date)
+        const afterDate = new Date(dateAdd).toISOString()
+
         formDataImage.append("file", uploadFile.current.files[0], uploadFile.current.files[0].fileName);
-        formDataImage.append("expires", "2024-04-26T00:00:00Z");
+        formDataImage.append("expires", afterDate);
         formDataImage.append("autoDelete", "true");
 
         const fileIOKey = process.env.NEXT_PUBLIC_TO_FILE_IO_KEY;
@@ -57,10 +61,9 @@ const GetInTouchForm = ({ title, detail, className }) => {
           let data = await fileIo.json();
           attachmentLink = data.link;
 
-          console.log({ attachmentLink });
         } else {
           updateForm({
-            message: "Did not fetch the details",
+            message: "Did not fetch the details 1",
             disabled: false,
           });
         }
