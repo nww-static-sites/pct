@@ -1,7 +1,9 @@
 import ReadBlog from "@/components/sections/ReadBlog";
-export const metadata = {
-  title: "Read Blog",
-  // description: "About PCT Conformal Coating",
+export async function generateMetadata({params}){
+  const slug = params.slug
+  return {
+    title: slug.toUpperCase(),
+  }
 }
 export default function ReadBlogPage({ params: { slug } }) {
   return <ReadBlog slug={slug} />;

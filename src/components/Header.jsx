@@ -10,7 +10,6 @@ import { TextWithIcon } from ".";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 
-
 import {
   headerContactList,
   headerSocialList,
@@ -23,8 +22,10 @@ import { IndustriesSubMenu, MobIndustriesSubMenu } from "./IndustiresSubMenu";
 import { cn } from "@/lib/utils";
 
 const Header = () => {
-  const route = useRouter()
-  const {theme:{button}} = useContext(DesignContext)
+  const route = useRouter();
+  const {
+    theme: { button },
+  } = useContext(DesignContext);
   const pathName = usePathname();
   const [change, setChanges] = useState(0);
   const [toggleServices, setToggleServices] = useState(false);
@@ -37,9 +38,9 @@ const Header = () => {
 
   useEffect(() => {
     setChanges((prev) => prev++);
-    setToggleIndustries(false)
-    setToggleServices(false)
-    setMenuModal(false)
+    setToggleIndustries(false);
+    setToggleServices(false);
+    setMenuModal(false);
   }, [pathName]);
   const handleServices = (e) => {
     setToggleServices(!toggleServices);
@@ -157,7 +158,10 @@ const Header = () => {
           </div>
 
           <div className="hidden lg:flex flex-1 justify-end">
-            <AnimateButton onClick={() => route.push("#contact", { scroll: true })} className={`${button.red} before:bg-secondary hover:bg-secondary hover:text-primary`}>
+            <AnimateButton
+              onClick={() => route.push("#contact", { scroll: true })}
+              className={`${button.red} before:bg-secondary hover:bg-secondary hover:text-primary`}
+            >
               Contact Us
             </AnimateButton>
           </div>
@@ -175,11 +179,7 @@ const Header = () => {
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
-                  <Image
-                    className="h-11 w-auto sm:hidden"
-                    src={logo}
-                    alt=""
-                  />
+                  <Image className="h-11 w-auto sm:hidden" src={logo} alt="" />
                 </a>
                 <button
                   type="button"
@@ -287,7 +287,13 @@ const Header = () => {
                   </div>
                   <div className="py-6 mt-6">
                     <div className="flex flex-1 justify-center">
-                      <AnimateButton className={`${button.red} w-full before:hover:scale-[100] before:bg-secondary hover:bg-secondary hover:text-primary`}>
+                      <AnimateButton
+                        onClick={() => {
+                          setMenuModal(false);
+                          route.push("#contact");
+                        }}
+                        className={`${button.red} w-full before:hover:scale-[100] before:bg-secondary hover:bg-secondary hover:text-primary`}
+                      >
                         Contact Us
                       </AnimateButton>
                     </div>

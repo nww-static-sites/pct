@@ -1,11 +1,17 @@
 import ContactUs from "@/components/sections/ContactUs";
 import Industry from "@/components/sections/Industries";
 import { Fragment } from "react";
+import { Metadata, ResolvingMetadata } from 'next'
 
-export const metadata = {
-  title: "Industries Served",
-  // description: "Industies Served",
-};
+
+export async function generateMetadata({params}){
+  // read route params
+  console.log(params);
+  const slug = params.slug
+  return {
+    title: slug.toUpperCase(),
+  }
+}
 
 export default function IndustriesServed({ params: { slug } }) {
   return (

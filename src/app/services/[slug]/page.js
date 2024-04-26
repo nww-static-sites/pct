@@ -2,10 +2,12 @@ import ContactUs from "@/components/sections/ContactUs";
 import Service from "@/components/sections/Service";
 import { Fragment } from "react";
 
-export const metadata = {
-  title: "Services",
-  // description: "Services",
-};
+export async function generateMetadata({params}){
+  const slug = params.slug
+  return {
+    title: slug.toUpperCase(),
+  }
+}
 
 export default function ServicePage({ params: { slug } }) {
   return (
