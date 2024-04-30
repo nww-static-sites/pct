@@ -24,41 +24,83 @@ export const headerSocialList = [
     id: 0,
     value: "",
     href: "https://www.facebook.com/ParaCoat/",
-    icon: "/images/icons/facebook.svg",
+    icon: "/images/icons/social/social_facebook_icon.svg",
   },
   {
     id: 1,
     value: "",
     href: "https://www.linkedin.com/company/para-coat-technologies-inc-",
-    icon: "/images/icons/linkedin-fill.svg",
+    icon: "/images/icons/social/linkedin_social_icon.svg",
   },
   {
     id: 2,
     value: "",
     href: "https://twitter.com/paracoattech?lang=en",
-    icon: "/images/icons/twitter.svg",
+    icon: "/images/icons/social/twitter_bird_icon.svg",
   },
 ];
+
+export const headerNavList = [
+  {
+    id: 0,
+    value: "Home",
+    href: "/",
+  },
+  {
+    id: 1,
+    value: "Services",
+    href: "",
+  },
+  {
+    id: 2,
+    value: "About Us",
+    href: "/about",
+  },
+  {
+    id: 3,
+    value: "Industries Served",
+    href: "",
+  },
+  {
+    id: 4,
+    value: "Blog",
+    href: "/blog",
+  },
+  {
+    id: 5,
+    value: "Careers",
+    href: "/careers",
+  },
+  {
+    id: 6,
+    value: "Dimer & Machine Sales",
+    href: "/dimer-and-machine-sales",
+  },
+]
 
 export const ourAchievements = [
   {
     id: 0,
     value: "14",
+    unit:"",
     shortDetail: "Years of Experience",
   },
   {
     id: 1,
     value: "3671",
+    unit:"",
     shortDetail: "Miles of Masking Tapes Used",
   },
   {
     id: 2,
-    value: "1.5M",
+    value: "1.5",
+    unit:"M",
     shortDetail: "Parts Coated",
   },
   {
     id: 3,
     value: "5",
+    unit:"",
     shortDetail: "Certifications",
   },
 ];

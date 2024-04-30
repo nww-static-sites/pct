@@ -263,15 +263,15 @@ const GetInTouchForm = ({ title, detail, className }) => {
             )}
             {quoteFile?.name
               ? quoteFile.name
-              : "Upload supported file (Max 15MB)"}
+              : "Upload Supported File (Max 15MB)"}
           </small>
         </div>
 
         <AnimateButton
           disabled={form.disabled}
-          className={`${button.red} w-full before:bg-primary hover:bg-primary`}
+          className={`${button.red} w-full before:bg-primary hover:bg-primary hover:before:scale-[120]`}
         >
-          {form.disabled ? "Submiting..." : "Submit"}
+          {form.disabled ? "Sending..." : "Send"}
         </AnimateButton>
         {form?.message && (
           <p className="text-primary w-full text-center my-2">{form.message}</p>

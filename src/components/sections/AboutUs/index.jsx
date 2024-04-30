@@ -35,7 +35,7 @@ export default function About() {
       </HeroSection>
       <AboutEachService
         title={"Our Story"}
-        subTitle={"Reliability That Lasts"}
+        subTitle={"RELIABILITY THAT LASTS"}
         detail={
           "Para-Coat Technologies, Inc. was established in 2010. We are an ISO 9001:2015, ISO 13485:2016 and ITAR certified manufacturer service provider specializing in the application of Parylene, Acrylic, Polyurethane, Silicone, and Epoxy conformal coatings. PCT conformal coatings find wide-ranging application in medical, electronic, automotive, military & aerospace industries. We also offer Parylene equipment sales and consulting. We are committed to providing consistent, quality service at a competitive price to ensure that we meet and/or exceed our customers’ expectations."
         }
@@ -43,13 +43,13 @@ export default function About() {
         image={"/images/about-us-story.jpg"}
       />
       <FullWidthContent className="py-12 md:py-20">
-        <h2 className="text-xs text-center md:text-sm mb-1 text-red tracking-widest">
+        <h2 className="text-xs text-center md:text-sm mb-1 text-red tracking-widest font-rob700">
           TEAM
         </h2>
         <h1 className="mb-5 md:mb-9 text-[28px] text-center md:text-5xl">
           Meet The Team
         </h1>
-        <div className="flex justify-center flex-wrap gap-7">
+        <div className="flex justify-center flex-wrap lg:flex-nowrap gap-7">
           {MeetTheTeam.map((item) => {
             return (
               <TeamCard

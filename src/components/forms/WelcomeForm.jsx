@@ -1,7 +1,7 @@
 "use client";
 import { AnimateButton } from "../Buttons";
 import { cn } from "@/lib/utils";
-import { useContext} from "react";
+import { useContext } from "react";
 import { DesignContext } from "@/context/design";
 import { downloadGuideSchema } from "@/lib/forms/downloadGuideSchema";
 import Input from "../Input";
@@ -51,7 +51,6 @@ const WelcomeDownloadGuidForm = ({ title, detail, className, onClose }) => {
             name="firstName"
             className="text-primary rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
             placeholder="Your first name"
-            required
             labelColor="text-primary"
           />
         </div>
@@ -63,7 +62,6 @@ const WelcomeDownloadGuidForm = ({ title, detail, className, onClose }) => {
             name="lastName"
             className="text-primary rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
             placeholder="Your last name"
-            required
             labelColor="text-primary"
           />
         </div>
@@ -87,7 +85,6 @@ const WelcomeDownloadGuidForm = ({ title, detail, className, onClose }) => {
             name="phoneNumber"
             className="text-primary rounded-lg w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
             placeholder="Your phone number"
-            required
             labelColor="text-primary"
           />
         </div>
@@ -101,9 +98,38 @@ const WelcomeDownloadGuidForm = ({ title, detail, className, onClose }) => {
 
         <AnimateButton
           disabled={form.disabled}
-          className={`${button.red} w-full before:bg-primary hover:bg-primary`}
+          className={`${button.red} ${button.icon} w-full before:bg-primary hover:bg-primary`}
         >
           Download Guide
+          {!form?.disabled && (
+            <svg
+              width="19"
+              height="18"
+              viewBox="0 0 19 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className=""
+            >
+              <path
+                d="M9.5 12.75V2.25"
+                className="stroke-secondary transition-all duration-500"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M5 8.25L9.5 12.75L14 8.25"
+                className="stroke-secondary transition-all duration-500"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M14.75 15.75H4.25"
+                className="stroke-secondary transition-all duration-500"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          )}
         </AnimateButton>
       </Form>
     </div>

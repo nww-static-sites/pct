@@ -71,8 +71,8 @@ const Footer = () => {
           {/* Grid 1 - Logo */}
           <div className="h-[max-content]">
             <Image
-              src="/pct_logo.png"
-              className="mb-3"
+              src="/logo-pct-footer.png"
+              className="mb-3 w-full max-w-[167px]"
               alt=""
               width={167}
               height={74}
@@ -98,7 +98,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col gap-y-4">
                 <h2 className="text-[22px] mb-1 text-white">Services</h2>
-                <MobServicesSubMenu addClass="font-rob500 text-white-content" />
+                <MobServicesSubMenu addClass="text-[16px] font-rob500 text-white-content" />
               </div>
             </div>
           </div>

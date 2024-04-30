@@ -18,6 +18,11 @@ export const Form = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = await getFormValues(e.target);
+    if(formData?.phoneNumber){
+      formData.phoneNumber = formData.phoneNumber.replace(/\s/g, "")
+      formData.phoneNumber = formData.phoneNumber.replace(/\-/g, "")
+      formData.phoneNumber = formData.phoneNumber.trim()
+    }
     try {
       updateForm({
         message: "",

@@ -19,7 +19,7 @@ const HorizontalGuideForm = ({ className }) => {
   return (
     <div className="w-full">
       <Form
-        className="flex flex-col lg:flex-row gap-4 items-center"
+        className="flex flex-col lg:flex-row gap-4 items-start"
         formSchema={downloadHorizontalGuideSchema}
         getFormValues={getFormValues}
         url="/api/downloadGuide"
@@ -27,56 +27,69 @@ const HorizontalGuideForm = ({ className }) => {
         subjectForAdmin="Download Guide"
       >
         {/* <form className="flex flex-col lg:flex-row gap-4 items-center"> */}
-        <Input type="text" id="name" required placeholder="Name*" />
-        <Input type="email" id="email" required placeholder="Email*" />
+        <Input
+          type="text"
+          id="name"
+          placeholder="Name"
+          className={"bg-transparent"}
+        />
+        <Input
+          type="email"
+          id="email"
+          required
+          placeholder="Email*"
+          className={"bg-transparent"}
+        />
         <Input
           type="text"
           id="phoneNumber"
-          required
-          placeholder="Phone Number*"
+          placeholder="Phone Number"
+          className={"bg-transparent"}
         />
 
-        <AnimateButton
-          className={`${button.icon} ${button.black} w-full lg:ml-3 p-4 before:bg-gret hover:bg-gret`}
-        >
-          Download
-          {form?.disabled === false && (
-            <svg
-              width="19"
-              height="18"
-              viewBox="0 0 19 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className=""
-            >
-              <path
-                d="M9.5 12.75V2.25"
-                className="stroke-white transition-all duration-500"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M5 8.25L9.5 12.75L14 8.25"
-                className="stroke-white transition-all duration-500"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14.75 15.75H4.25"
-                className="stroke-white transition-all duration-500"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+        <div className="w-full">
+          <AnimateButton
+            className={`${button.icon} ${button.black} w-full lg:ml-3 p-4 before:bg-gret hover:bg-gret`}
+          >
+            Download
+            {form?.disabled === false && (
+              <svg
+                width="19"
+                height="18"
+                viewBox="0 0 19 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className=""
+              >
+                <path
+                  d="M9.5 12.75V2.25"
+                  className="stroke-white transition-all duration-500"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M5 8.25L9.5 12.75L14 8.25"
+                  className="stroke-white transition-all duration-500"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M14.75 15.75H4.25"
+                  className="stroke-white transition-all duration-500"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            )}
+          </AnimateButton>
+          {form?.message && (
+            <p className="text-secondary w-full text-center mt-2">
+              {form.message}
+            </p>
           )}
-        </AnimateButton>
+        </div>
       </Form>
 
-      {form?.message && (
-        <p className="text-secondary w-full text-center md:text-right mt-2">
-          {form.message}
-        </p>
-      )}
       {/* </form> */}
     </div>
   );

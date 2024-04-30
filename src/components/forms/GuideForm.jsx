@@ -12,48 +12,6 @@ const GuideForm = ({ title, detail, className }) => {
     form,
   } = useContext(DesignContext);
 
-  // const [isDisabled, setIsDisabled] = useState(false);
-  // const [message, setMessage] = useState("");
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const formData = {
-  //     firstName: e.target.firstName.value,
-  //     lastName: e.target.lastName.value,
-  //     email: e.target.email.value,
-  //     phoneNumber: e.target.phoneNumber.value.trim(),
-  //   };
-
-  //   try {
-  //     setIsDisabled(true);
-  //     setMessage("");
-  //     downloadGuideSchema.parse(formData);
-  //     const response = await fetch("/api/downloadGuide", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(formData),
-  //     });
-  //     console.log(response.body);
-  //     const data = await response.text();
-  //     if (data.message) {
-  //       setMessage(data.message);
-  //       setIsDisabled(false);
-
-  //       e.target.reset();
-  //       setTimeout(() => {
-  //         setMessage("");
-  //       }, 3000);
-  //     }
-  //   } catch (e) {
-  //     console.log(e);
-  //     const error = JSON.parse(e);
-  //     setMessage(error[0].message);
-  //     setIsDisabled(false);
-  //   }
-  // };
-
   const getFormValues = (form) => ({
     firstName: form.firstName.value,
     lastName: form.lastName.value,
@@ -69,7 +27,7 @@ const GuideForm = ({ title, detail, className }) => {
       )}
     >
       <h1 className="text-2xl lg:text-4xl mb-1">{title}</h1>
-      <p className="font-pop400 text-xs lg:text-sm mb-3">{detail}</p>
+      <p className="font-pop300 text-xs lg:text-sm mb-4">{detail}</p>
       <Form
         formSchema={downloadGuideSchema}
         getFormValues={getFormValues}
@@ -82,18 +40,16 @@ const GuideForm = ({ title, detail, className }) => {
           <input
             type="text"
             id="firstName"
-            required
-            className="rounded-[4px] w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-secondary"
-            placeholder="First Name *"
+            className="rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide"
+            placeholder="First Name"
           />
         </div>
         <div className="mb-4">
           <input
             type="text"
             id="lastName"
-            required
-            className="rounded-[4px] w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-secondary"
-            placeholder="Last Name *"
+            className="rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide"
+            placeholder="Last Name"
           />
         </div>
         <div className="mb-4">
@@ -101,7 +57,7 @@ const GuideForm = ({ title, detail, className }) => {
             type="email"
             id="email"
             required
-            className="rounded-[4px] w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-secondary"
+            className="rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide"
             placeholder="Email *"
           />
         </div>
@@ -109,9 +65,8 @@ const GuideForm = ({ title, detail, className }) => {
           <input
             type="text"
             id="phoneNumber"
-            required
-            className="rounded-[4px] w-full px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-secondary"
-            placeholder="Phone Number *"
+            className="rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide"
+            placeholder="Phone Number"
           />
         </div>
         <div className="mb-3">
@@ -126,7 +81,7 @@ const GuideForm = ({ title, detail, className }) => {
           className={`${button.icon} ${button.red} w-full before:bg-secondary hover:bg-secondary hover:text-primary`}
         >
           Download Guide
-          {form?.disabled === false && (
+          {!form?.disabled && (
             <svg
               width="19"
               height="18"

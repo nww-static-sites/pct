@@ -7,10 +7,13 @@ import Image from "next/image";
 import { AnimateButton } from "../Buttons";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const AboutPCT = () => {
-  const { theme:{button} } = useContext(DesignContext);
-  const route = useRouter()
+  const {
+    theme: { button },
+  } = useContext(DesignContext);
+  const route = useRouter();
 
   return (
     <section className="bg-white pb-12 bg-[url('/images/lines.svg')] bg-cover bg-center bg-no-repeat">
@@ -20,7 +23,7 @@ const AboutPCT = () => {
             initial={{ opacity: 0, scale: 0, originX: 0.2, originY: 0.2 }}
             whileInView={{ opacity: 1, scale: 1, originX: 0.2, originY: 0.2 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay:0.2 }}
+            transition={{ duration: 1, delay: 0.2 }}
           >
             <Image
               className="w-full h-auto mb-8 max-h-[420px] md:max-h-[320px] lg:max-h-none lg:mb-0 lg:w-[36vw] lg:max-w-[519px] object-cover"
@@ -35,7 +38,7 @@ const AboutPCT = () => {
               initial={{ x: "40%" }}
               whileInView={{ x: "0%" }}
               viewport={{ once: true }}
-              transition={{ duration: 1, delay:0.2 }}
+              transition={{ duration: 1, delay: 0.2 }}
             >
               <h2 className="inline h-line text-xs md:text-sm mb-1 before:bg-red before:w-[30px] before:h-[2px] pl-[36px] text-red">
                 ABOUT US
@@ -44,11 +47,31 @@ const AboutPCT = () => {
                 About PCT Para-Coat Technolgies
               </h1>
               <p className="font-pop500 mb-4 md:mb-8 text-[13px] md:text-[16px]">
-                Para-Coat Technologies, Inc. was established in 2010. We are
-                an ISO 9001:2015, ISO 13485:2016,
-                and ITAR-certified manufacturer service provider specializing in
-                the application of Parylene, Acrylic, Polyurethane, Silicone,
-                and Epoxy conformal coatings.
+                {`Para-Coat Technologies, Inc. was established in 2010. We are an `}
+                <Link
+                  href="https://www.iso.org/standard/62085.html"
+                  target="_blank"
+                  className="underline"
+                  >
+                  ISO 9001:2015
+                </Link>
+                {", "}
+                <Link
+                  href="https://www.iso.org/standard/59752.html"
+                  target="_blank"
+                  className="underline"
+                  >
+                  ISO 13485:2016
+                </Link>
+                {` and `}
+                <Link
+                  href="https://www.pmddtc.state.gov/ddtc_public/ddtc_public?id=ddtc_public_portal_itar_landing"
+                  target="_blank"
+                  className="underline"
+                >
+                  ITAR-certified
+                </Link>
+                {`manufacturer service provider specializing in the application of Parylene, Acrylic, Polyurethane, Silicone, and Epoxy conformal coatings.`}
               </p>
               <p className="mb-7 md:mb-8 text-[13px] md:text-[15px]">
                 PCT conformal coatings find wide-ranging applications in

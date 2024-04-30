@@ -8,6 +8,7 @@ import Link from "next/link";
 
 const HeroContentBox = ({
   customH1,
+  customDetail,
   title,
   detail,
   className,
@@ -32,7 +33,13 @@ const HeroContentBox = ({
         <h1 className="text-3xl md:text-6xl mb-3">{title}</h1>
       )}
 
-      <p className="font-pop400 text-xs md:text-sm mb-10">{detail}</p>
+      {
+        customDetail ? (
+          customDetail
+        ) : (
+          <p className="font-pop400 text-xs md:text-sm mb-10">{detail}</p>
+        )
+      }
       <Link href={buttonLink ? buttonLink : "#contact"} target={buttonTarget ? buttonTarget : "_self"}>
         <AnimateButton
           className={`${button.red} before:bg-secondary hover:bg-secondary hover:text-primary mb-1`}

@@ -16,7 +16,7 @@ export default function WhyJoinTeam() {
           WHY JOIN TEAM
         </h2>
         <h1 className="text-3xl md:text-6xl text-center mb-9">
-          Benefits of working with us
+          Benefits Of Working With Us
         </h1>
         <div className="flex flex-col md:flex-row max-w-[325px] md:max-w-none mx-auto flex-wrap justify-center gap-6">
           {whyJoinTeams.map((item) => {

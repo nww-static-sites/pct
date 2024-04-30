@@ -9,11 +9,12 @@ import { DesignContext } from "@/context/design";
 import { useContext } from "react";
 import { HorizontalGuidForm, HorizontalGuideForm } from "../forms";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const WhatWeOffer = () => {
   const {
     theme: { button },
-    data: {ourServices}
+    data: { ourServices },
   } = useContext(DesignContext);
   const router = useRouter();
 
@@ -31,25 +32,33 @@ const WhatWeOffer = () => {
             thrive in any environment.
           </p>
         </div>
-        <div>
+        <div className="">
           <Splide
             aria-label="What We Offers"
             tag="div"
+            className="w-full md:w-[90%] mx-auto splide-what-we-offer"
             options={{
-              type: "loop",
+              // type: "loop",
               fixedHeight: "auto",
-              focus: "left",
+              focus: "center",
               padding: { left: "0px", right: "120px" },
               gap: 40,
               pagination: false,
-              arrows: false,
+              arrows: true,
               perPage: 4,
+              perMove: 4,
               breakpoints: {
+                1440: {
+                  gap: 24,
+                  perMove: 2,
+                  perPage: 3,
+                },
                 768: {
                   gap: 24,
+                  arrows: false,
                   perMove: 1,
+                  padding: { left: "0px", right: "0px" },
                   perPage: 3,
-                  padding: { left: "0px", right: "80px" },
                 },
                 640: {
                   gap: 18,
@@ -84,10 +93,14 @@ const WhatWeOffer = () => {
                       />
                     </div>
                     <div className="px-5 mb-[20px]">
-                      <h5 className="text-lg mb-3">{item.title}</h5>
-                      <p className="font-pop400 text-sm text-gret">
-                        {item.shortDetail}
-                      </p>
+                      <Link href={`/services/${item.slug}`}>
+                        <h5 className="text-lg mb-3">{item.title}</h5>
+                      </Link>
+                      <Link href={`/services/${item.slug}`}>
+                        <p className="font-pop400 text-sm text-gret">
+                          {item.shortDetail}
+                        </p>
+                      </Link>
                     </div>
                     <SlideColorButton
                       className={`${button.icon} mb-0 mt-auto bg-white before:bg-red text-red hover:text-secondary justify-start`}

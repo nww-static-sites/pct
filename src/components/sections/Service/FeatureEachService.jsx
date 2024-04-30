@@ -25,14 +25,14 @@ const FetureEachService = ({
         <h1 className="text-[28px] md:text-5xl text-center mb-10">{title}</h1>
 
         <div className="flex flex-col md:flex-row gap-6">
-          <ul className="flex flex-col gap-5">
+          <ul className="flex flex-col gap-6">
             {features.length &&
               features.map((feature) => {
                 return (
                   <li key={feature.id}>
-                    <div className="flex gap-1 mb-3">
+                    <div className="flex gap-2 mb-3">
                       <Image
-                        src={"/images/icons/check-circle.svg"}
+                        src={"/images/icons/check-circle (2).svg"}
                         alt=""
                         width={24}
                         height={24}
@@ -50,7 +50,7 @@ const FetureEachService = ({
           </ul>
           <Image
             src={image}
-            className="w-full md:max-w-[424px] md:h-full mx-auto"
+            className="w-full md:max-w-[424px] md:h-full mx-auto sticky top-[74px]"
             alt=""
             width={424}
             height={678}

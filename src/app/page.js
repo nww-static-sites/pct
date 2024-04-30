@@ -26,8 +26,11 @@ export default function Home() {
               <span className="text-red">.</span>
             </h1>
           }
-          detail={
-            "At PCT Conformal Coating, we bring precision and innovation to the forefront, ensuring your electronic components are shielded with the highest standard of protection. Our exclusive focus lies in the specialization of Parylene coating."
+          customDetail={
+            <p className="font-pop400 text-xs md:text-sm mb-10 max-w-[800px] tracking-wide">
+              {"At PCT Conformal Coating, we bring precision and innovation to the forefront, ensuring your electronic components are shielded with the highest standard of protection. Our exclusive focus lies in the specialization of "}
+              <span className="font-pop500 text-sm md:text-[16px]">Parylene coating.</span>
+            </p>
           }
         />
 
@@ -43,7 +46,7 @@ export default function Home() {
       <OurAchievements />
       <OurCertifications />
       <ContactUs />
-      <WelcomeFormModal/>
+      <WelcomeFormModal />
     </main>
   );
 }

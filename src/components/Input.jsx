@@ -14,7 +14,7 @@ const Input = ({
       <div className="flex flex-col space-y-1 text-left">
         {props.label && (
           <label
-            className={labelColor ? labelColor : "text-secondary"}
+            className={`${labelColor ? labelColor : "text-secondary"} font-rob400`}
             htmlFor={props.id}
           >
             {props.label}
@@ -23,7 +23,7 @@ const Input = ({
         )}
         <input
           className={cn(
-            "ring-1 rounded-[4px] outline-none bg-white200 text-sm ring-white py-2 px-3 md:p-3 placeholder:text-secondary text-white",
+            "ring-1 rounded-[4px] outline-none bg-white200 text-sm ring-white py-2 px-3 md:p-3 placeholder:text-secondary text-white font-rob400 placeholder:font-rob400",
             className && className
           )}
           type={type}

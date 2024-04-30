@@ -53,6 +53,7 @@
   --color-red-32: rgba(220, 29, 40, 3.2);
   --color-red-80: #dc1d28cf; /*rgba(220, 29, 40, 8) */
   --color-whitesmoke: #f9f9f9;
+  --color-whitesmoke-input: #d0d0d0;
   --color-black: #000000;
   --color-black-content: #1e1e1e;
   --color-white-content: #8e939f;
@@ -142,15 +143,50 @@
     transform: translateY(-50%);
   }
 
+  .splide-what-we-offer > .splide__arrows {
+    width: 107%;
+    position: absolute;
+    margin-inline: auto;
+    /* border: 2px solid green; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .splide-what-we-offer .splide__arrow {
+    background-color: transparent;
+  }
+  .splide-what-we-offer .splide__arrows .splide__arrow--prev {
+    left: -1em;
+  }
+  .splide-what-we-offer .splide__arrows .splide__arrow--next {
+    right: -1em;
+  }
+
   .bg-clip-path-1 {
     clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+  .bg-clip-path-2 {
+    clip-path: polygon(50% 20%, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+  
+  @media screen(md) {
+    .bg-clip-path-1 {
+      clip-path: polygon(50% 20%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+    .bg-clip-path-2 {
+      clip-path: polygon(50% 35%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
   }
 
   @media screen(lg) {
     .bg-clip-path-1 {
       clip-path: polygon(50% 20%, 100% 0, 100% 100%, 0 100%, 0 0);
     }
+    .bg-clip-path-2 {
+      clip-path: polygon(50% 45%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
   }
+  
   /* 
   .vertical-lines-background {
     background: linear-gradient(90deg, #fff calc(100% - 1px), #e7e7e7 0);

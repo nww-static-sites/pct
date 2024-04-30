@@ -13,8 +13,8 @@ const OurCertifications = () => {
   return (
     <section className="bg-white py-12 lg:py-20">
       <FullWidthContent>
-        <div className="flex w-full flex-col gap-y-4 text-center justify-center items-center lg:text-left lg:flex-row lg:gap-x-4 lg:justify-between lg:items-center">
-          <div className="w-full md:w-[80%] lg:min-w-[461px] lg:w-[32vw] space-y-3 md:space-y-5 mx-auto lg:ml-0">
+        <div className="flex w-full flex-col gap-y-4 text-center justify-center items-center lg:text-left lg:flex-row lg:gap-x-4 lg:justify-between lg:items-start">
+          <div className="w-full mt-2 md:w-[80%] lg:min-w-[461px] lg:w-[32vw] space-y-3 md:space-y-5 mx-auto lg:ml-0">
             <h1 className="text-3xl md:text-5xl"><span className="text-red">Our</span> Certifications</h1>
             <p className="font-pop400 text-[13px] md:text-[15px]">
               Backed by a portfolio of industry-recognized certifications, we

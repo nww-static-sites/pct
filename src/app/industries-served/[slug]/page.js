@@ -5,8 +5,6 @@ import { Metadata, ResolvingMetadata } from 'next'
 
 
 export async function generateMetadata({params}){
-  // read route params
-  console.log(params);
   const slug = params.slug
   return {
     title: slug.toUpperCase(),

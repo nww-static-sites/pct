@@ -4,6 +4,7 @@ import { FullWidthContent } from "@/components/Sections";
 import { useContext } from "react";
 import { DesignContext } from "@/context/design";
 import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default function OpenPositions() {
   const {
@@ -12,17 +13,25 @@ export default function OpenPositions() {
   } = useContext(DesignContext);
   const route = useRouter();
   return (
-    <section className="pt-20 bg-secondary bg-[url('/images/lines.svg')] bg-contain bg-center">
-      <FullWidthContent>
-        <h2 className="text-xs md:text-sm text-red text-center mb-1">JOBS</h2>
+    <section className="pt-20 pb-10 bg-secondary bg-[url('/images/lines.svg')] bg-contain bg-top">
+      <FullWidthContent className={"max-w-[1920px]"}>
+        <h2 className="text-xs md:text-sm text-red text-center mb-1 font-rob700 widest">
+          JOBS
+        </h2>
         <h1 className="text-[28px] md:text-5xl text-center mb-9">
           Open Positions
         </h1>
-        <div className="rounded-2xl bg-white shadow-[0px_8px_40px_0px] shadow-primary05">
+        <div className="rounded-2xl bg-white shadow-[0px_8px_20px_0px] shadow-primary05">
           {careers.length ? (
-            careers.map((career) => {
+            careers.map((career, index) => {
               return (
-                <div key={career.id} className="px-4 py-9 flex justify-between items-start gap-x-4 border-gret28 border-b-[1px]">
+                <div
+                  key={career.id}
+                  className={cn(
+                    "px-4 py-9 flex justify-between items-start gap-x-4 border-gret28 border-b-[1px]",
+                    index === careers.length - 1 && "border-b-0"
+                  )}
+                >
                   <div className="flex-1 w-full">
                     <h4 className="text-[16px] md:text-[20px] mb-1">
                       {career.title}
@@ -30,9 +39,7 @@ export default function OpenPositions() {
                     <p className="text-gret text-xs">{career.jobType}</p>
                   </div>
                   <Button
-                    onClick={() =>
-                      route.push(`/open-position/${career.slug}`)
-                    }
+                    onClick={() => route.push(`/open-position/${career.slug}`)}
                     className={`${button.red} overflow-hidden w-[162px] h-[46px] md:w-[220px] md:h-[52px] font-rob500 text-[16px] rounded-2xl flex items-center justify-between`}
                   >
                     <span className="flex-1 text-left pl-4">View Opening</span>
