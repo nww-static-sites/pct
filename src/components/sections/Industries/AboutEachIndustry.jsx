@@ -43,7 +43,7 @@ const AboutEachIndustry = ({
               {detail}
             </p>
             <h2 className="text-[28px] md:text-3xl">{subTitle2}</h2>
-            <p className="mb-2 md:mb-8 text-[13px] md:text-[15px]">{detail2}</p>
+            <p className="mb-2 md:mb-5 text-[13px] md:text-[15px]">{detail2}</p>
             {slug === "consumer-electronics" ? (
               <div className="flex gap-x-2 flex-wrap mb-5">
                 <Link
@@ -80,7 +80,7 @@ const AboutEachIndustry = ({
             )}
             <Link href="#contact">
               <AnimateButton
-                className={`${button.red} px-6 md:px-8 mt-4 shadow-[0_1px_8px_0px_rgba(0,0,0,0.0)] shadow-red32 hover:shadow-none before:bg-primary hover:bg-primary`}
+                className={`${button.red} px-6 md:px-8 mt-0 shadow-[0_1px_8px_0px_rgba(0,0,0,0.0)] shadow-red32 hover:shadow-none before:bg-primary hover:bg-primary`}
               >
                 {buttonText}
               </AnimateButton>

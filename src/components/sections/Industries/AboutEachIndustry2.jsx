@@ -10,6 +10,7 @@ import Link from "next/link";
 
 const AboutEachIndustry2 = ({
   title,
+  title2,
   detail,
   buttonText,
   details,
@@ -41,9 +42,12 @@ const AboutEachIndustry2 = ({
   return (
     <section className="py-8 lg:py-12 bg-secondary">
       <FullWidthContent>
-        <div className="flex flex-col-reverse lg:flex-row lg:gap-x-4">
+        <div className="flex flex-col-reverse lg:flex-row lg:gap-x-8">
           <div className="flex-1 mt-auto mb-auto text-center lg:text-left">
-            <h1 className="mb-5 text-[28px] md:text-5xl">{title}</h1>
+            <h1 className="mb-5 text-[28px] md:text-5xl">
+              {title}
+              {title2 && <span className="text-red">{title2}</span>}
+            </h1>
             {/* If section have multiple details */}
             {slug === "elastomers" && (
               <>
@@ -54,7 +58,7 @@ const AboutEachIndustry2 = ({
                         key={item.buttonText}
                         onClick={() => handleDetailToggle(item)}
                         className={cn(
-                          "w-full max-w-[280px] px-4 py-3 bg-white ring-1 ring-black font-pop400 text-xs lg:text-sm",
+                          "px-3 md:px-4 py-3 bg-white ring-1 ring-black font-pop400 text-xs lg:text-sm",
                           active === item.buttonText && "bg-primary text-white"
                         )}
                       >
@@ -74,13 +78,15 @@ const AboutEachIndustry2 = ({
                 {detail}
               </p>
             )}
-            <Link href="#contact">
-              <AnimateButton
-                className={`${button.red} shadow-[0_1px_8px_0px_rgba(0,0,0,0.0)] shadow-red32 hover:shadow-none before:bg-primary hover:bg-primary`}
-              >
-                {buttonText}
-              </AnimateButton>
-            </Link>
+            {!["printed-circuit-boards", "medical"].includes(slug)  && (
+              <Link href="#contact">
+                <AnimateButton
+                  className={`${button.red} shadow-[0_1px_8px_0px_rgba(0,0,0,0.0)] shadow-red32 hover:shadow-none before:bg-primary hover:bg-primary`}
+                >
+                  {buttonText}
+                </AnimateButton>
+              </Link>
+            )}
           </div>
           <Image
             className="w-full h-auto mb-5 max-w-[674px] mx-auto lg:max-h-none lg:mb-0 lg:w-[46vw] lg:max-w-[674px] object-contain"

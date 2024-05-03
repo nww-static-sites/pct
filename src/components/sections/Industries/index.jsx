@@ -49,6 +49,7 @@ export default function Industry({ slug }) {
             "Fill the form to unlock valuable insights and expertise by downloading our guide for free."
           }
           themeColor={hero?.themeColor}
+          formTheme={hero?.formTheme}
         />
       </HeroSection>
       <AboutEachIndustry
@@ -67,6 +68,7 @@ export default function Industry({ slug }) {
           buttonText={reliability2.buttonText}
           image={reliability2.image}
           slug={slug}
+          title2={reliability2.title2}
         />
       )}
       <IndustryBenefits

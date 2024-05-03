@@ -6,7 +6,7 @@ import { DesignContext } from "@/context/design";
 import { downloadGuideSchema } from "@/lib/forms/downloadGuideSchema";
 import { Form } from "./Form";
 
-const GuideForm = ({ title, detail, className, themeColor }) => {
+const GuideForm = ({ title, detail, className, themeColor, formTheme }) => {
   const {
     theme: { button },
     form,
@@ -43,7 +43,8 @@ const GuideForm = ({ title, detail, className, themeColor }) => {
             id="firstName"
             className={cn(
               "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
-              themeColor && "text-primary placeholder:text-primary"
+              themeColor && "text-primary placeholder:text-primary ",
+              formTheme && formTheme
             )}
             placeholder="First Name"
           />
@@ -54,7 +55,8 @@ const GuideForm = ({ title, detail, className, themeColor }) => {
             id="lastName"
             className={cn(
               "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
-              themeColor && "text-primary placeholder:text-primary"
+              themeColor && "text-primary placeholder:text-primary",
+              formTheme && formTheme
             )}
             placeholder="Last Name"
           />
@@ -66,7 +68,8 @@ const GuideForm = ({ title, detail, className, themeColor }) => {
             required
             className={cn(
               "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
-              themeColor && "text-primary placeholder:text-primary"
+              themeColor && "text-primary placeholder:text-primary",
+              formTheme && formTheme
             )}
             placeholder="Email *"
           />
@@ -77,7 +80,9 @@ const GuideForm = ({ title, detail, className, themeColor }) => {
             id="phoneNumber"
             className={cn(
               "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
-              themeColor && "text-primary placeholder:text-primary"
+              themeColor && "text-primary placeholder:text-primary",
+              formTheme && formTheme
+              
             )}
             placeholder="Phone Number"
           />

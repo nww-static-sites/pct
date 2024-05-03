@@ -19,7 +19,7 @@ const IndustryBenefits = ({ title, subTitle, detail, benefits }) => {
                 return (
                   <li
                     key={benefit.id}
-                    className="text-secondary text-center md:max-w-[200px]"
+                    className="text-secondary text-center md:w-[20%] md:max-w-[200px]"
                   >
                     <div className="w-[50px] h-[50px] mx-auto mb-4 grid place-content-center rounded-full bg-red text-lg">
                       {`0${ind + 1}`.slice(-2)}

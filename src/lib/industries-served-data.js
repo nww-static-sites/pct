@@ -147,7 +147,7 @@ export const industriesServed = [
       benefits: {
         subTitle: "BENEFITS",
         title: "Benefits of Parylene Coating",
-        detail: `The benefits of parylene coating inclues the following.`,
+        detail: `The benefits of parylene coating includes the following.`,
         benefits: [
           {
             id: 0,
@@ -286,7 +286,7 @@ export const industriesServed = [
       benefits: {
         subTitle: "BENEFITS",
         title: "Benefits of Parylene Coating",
-        detail: `The benefits of parylene coating inclues the following.`,
+        detail: `The benefits of parylene coating includes the following.`,
         benefits: [
           {
             id: 0,
@@ -377,7 +377,7 @@ export const industriesServed = [
       benefits: {
         subTitle: "BENEFITS",
         title: "Parylene Benefits for LED Protection",
-        detail: `The benefits of parylene coating inclues the following.`,
+        detail: `The benefits of parylene coating includes the following.`,
         benefits: [
           {
             id: 0,
@@ -602,6 +602,7 @@ export const industriesServed = [
         detail: "Coating Options For All Your Protective Needs.",
         buttonText: "Get in touch",
         buttonLink: "",
+        formTheme: "bg-primary45"
       },
       reliability: {
         image: "/images/industries/printed-circuit-boards/reliability.png",
@@ -616,7 +617,8 @@ export const industriesServed = [
       },
       reliability2: {
         image: "/images/industries/printed-circuit-boards/reliability2.png",
-        title: "Masking Requirements for Printed Circuit Boards",
+        title: "Masking Requirements for ",
+        title2:"Printed Circuit Boards",
         detail: `There are several different masking techniques using different materials such as masking tape, dots, shapes, boots and liquid latex in conformal coating processing. The masking requirements for liquid applications and Parylene coated PCBs differ in that Parylene masking must be ‘airtight’ and properly ‘sealed’ while liquid masking is basically a ‘shield’ from the liquid. An exception would be PCBs being processed via the dip method. These masked areas need to be sealed to the PCB to prevent the leakage of any unwanted coating into the connectors. However, if the masking fails or rework becomes necessary there are approved methods of coating removal.
         
         Conformal Coating Limitations:
@@ -625,7 +627,7 @@ export const industriesServed = [
         buttonLink: "",
       },
       benefits: {
-        subTitle: "BENEFITS",
+        subTitle: "COMMON COATINGS",
         title: "Common Conformal Coatings",
         detail: `The five most commonly used conformal coatings are acrylic, polyurethane, silicone, epoxy and Parylene. The chemical and physical properties of the materials differ and also offer different degrees of protection.`,
         benefits: [
