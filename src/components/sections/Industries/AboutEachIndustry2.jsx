@@ -39,9 +39,9 @@ const AboutEachIndustry2 = ({
   };
 
   return (
-    <section className="py-8 lg:py-12 bg-white">
+    <section className="py-8 lg:py-12 bg-secondary">
       <FullWidthContent>
-        <div className="flex flex-col-reverse lg:flex-row lg:gap-x-11">
+        <div className="flex flex-col-reverse lg:flex-row lg:gap-x-4">
           <div className="flex-1 mt-auto mb-auto text-center lg:text-left">
             <h1 className="mb-5 text-[28px] md:text-5xl">{title}</h1>
             {/* If section have multiple details */}

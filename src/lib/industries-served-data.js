@@ -29,7 +29,7 @@ export const industriesServed = [
       benefits: {
         subTitle: "BENEFITS",
         title: "Benefits of Parylene Coating",
-        detail: `The benefits of parylene coating inclues the following.`,
+        detail: `The benefits of parylene coating includes the following.`,
         benefits: [
           {
             id: 0,
@@ -76,7 +76,8 @@ export const industriesServed = [
           {
             id: 3,
             title: "Emission Sensors & Systems",
-            image: "/images/industries/automotive/Emission Sensors &  Systems.png",
+            image:
+              "/images/industries/automotive/Emission Sensors &  Systems.png",
           },
           {
             id: 4,
@@ -91,7 +92,8 @@ export const industriesServed = [
           {
             id: 6,
             title: "LEDs for Vehicle Lighting",
-            image: "/images/industries/automotive/LEDs for Vehicle Lighting.png",
+            image:
+              "/images/industries/automotive/LEDs for Vehicle Lighting.png",
           },
           {
             id: 7,
@@ -107,11 +109,10 @@ export const industriesServed = [
             id: 9,
             title: "Sensors",
             image: "/images/industries/automotive/Sensors.png",
-          }
+          },
         ],
       },
     },
-    
   },
   {
     id: 1,
@@ -170,7 +171,7 @@ export const industriesServed = [
           },
         ],
       },
-      examples: null
+      examples: null,
     },
   },
   {
@@ -234,7 +235,8 @@ export const industriesServed = [
           },
           {
             id: 7,
-            benefit: "Fully effective in the most extreme environmental conditions",
+            benefit:
+              "Fully effective in the most extreme environmental conditions",
           },
           {
             id: 8,
@@ -246,7 +248,7 @@ export const industriesServed = [
           },
         ],
       },
-      examples: null
+      examples: null,
     },
   },
   {
@@ -262,6 +264,7 @@ export const industriesServed = [
         detail: "Coating Options For All Your Protective Needs.",
         buttonText: "Get in touch",
         buttonLink: "",
+        themeColor: "text-primary",
       },
       reliability: {
         image: "/images/industries/elastomers/reliability.png",
@@ -375,7 +378,7 @@ export const industriesServed = [
         subTitle: "BENEFITS",
         title: "Parylene Benefits for LED Protection",
         detail: `The benefits of parylene coating inclues the following.`,
-        benefits: [ 
+        benefits: [
           {
             id: 0,
             benefit: "Excellent dielectric strength",
@@ -673,7 +676,7 @@ export const industriesServed = [
           },
         ],
       },
-      examples: null
+      examples: null,
     },
   },
 ];

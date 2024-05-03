@@ -6,7 +6,7 @@ import { DesignContext } from "@/context/design";
 import { applicationSchema } from "@/lib/forms/downloadGuideSchema";
 import Input from "../Input";
 
-const ApplyForm = ({ formTitle, detail, className }) => {
+const ApplyForm = ({ formTitle, detail, className, onClose }) => {
   const [quoteFile, setQuoteFile] = useState(null);
   const [form, updateForm] = useState({ disabled: false, message: "" });
   
@@ -20,6 +20,7 @@ const ApplyForm = ({ formTitle, detail, className }) => {
     firstName: form.firstName.value,
     lastName: form.lastName.value,
     email: form.email.value,
+    uploadFile: form.uploadFile.files[0],
     phoneNumber: form.phoneNumber.value.trim(),
     link: form.link.value.trim(),
   });
@@ -27,6 +28,11 @@ const ApplyForm = ({ formTitle, detail, className }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = getFormValues(e.target);
+    if(formData?.phoneNumber){
+      formData.phoneNumber = formData.phoneNumber.replace(/\s/g, "")
+      formData.phoneNumber = formData.phoneNumber.replace(/\-/g, "")
+      formData.phoneNumber = formData.phoneNumber.trim()
+    }
     try {
       updateForm({
         message: "",
@@ -50,7 +56,7 @@ const ApplyForm = ({ formTitle, detail, className }) => {
         formDataImage.append("autoDelete", "true");
 
         const fileIOKey = process.env.NEXT_PUBLIC_TO_FILE_IO_KEY;
-        const fileIo = await fetch("https://file.io/", {
+        fetch("https://file.io/", {
           method: "POST",
           headers: {
             accept: "application/json",
@@ -58,19 +64,23 @@ const ApplyForm = ({ formTitle, detail, className }) => {
           },
           body: formDataImage,
           redirect: "follow",
-        });
+        }).then(async fileIo => {
 
-        if (fileIo.status === 200) {
-          let data = await fileIo.json();
-          attachmentLink = data.link;
+          if (fileIo.status === 200) {
+            let data = await fileIo.json();
+            attachmentLink = data.link;
+  
+            
+          } else {
+            updateForm({
+              message: "Did not fetch the details",
+              disabled: false,
+            });
+          }
+        }).catch(e => {
+          return JSON.stringify(e)
+        })
 
-          
-        } else {
-          updateForm({
-            message: "Did not fetch the details",
-            disabled: false,
-          });
-        }
       }
 
       // For Admin
@@ -126,8 +136,9 @@ const ApplyForm = ({ formTitle, detail, className }) => {
 
         e.target.reset();
         setQuoteFile(null);
-
+        
         setTimeout(() => {
+          onClose(false)
           updateForm({
             message: "",
             disabled: false,
@@ -140,7 +151,7 @@ const ApplyForm = ({ formTitle, detail, className }) => {
         });
       }
     } catch (e) {
-      const error = JSON.parse(e);
+      const error =  JSON?.parse(e)
       if (error?.length && error[0]?.message) {
         updateForm({
           message: error[0].message,
@@ -165,6 +176,7 @@ const ApplyForm = ({ formTitle, detail, className }) => {
   };
   const handleRemove = (e) => {
     setQuoteFile(null);
+    resume.current.value = null;
   };
 
   
@@ -235,7 +247,6 @@ const ApplyForm = ({ formTitle, detail, className }) => {
             id="link"
             name="link"
             label="Link to CV/LinkedIn"
-            required
             className="w-full text-primary px-5 py-3 border border-gray bg-white200 text-sm placeholder:text-gret"
             placeholder="Link here"
             labelColor="text-primary"
@@ -243,27 +254,27 @@ const ApplyForm = ({ formTitle, detail, className }) => {
           />
 
           <div className="mb-4 col-span-2 text-left">
-            <label className="ml-0 mr-auto" htmlFor="uploadFile">Resume Upload</label>
+            <label className="ml-0 mr-auto" htmlFor="uploadFile">Resume Upload <span className="text-red">*</span></label>
+            <button
+              className="w-full ring-1 mt-1 ring-red z-10 relative bg-white rounded-sm text-red flex justify-center items-center gap-4 mb-2 py-3 px-5"
+              onClick={handleOpenFile}
+            >
+              Upload Resume
+            </button>
             <input
               ref={resume}
               type="file"
               id="uploadFile"
               name="uploadFile"
               labelColor="text-primary"
+              required
               label="Resume Upload"
-              className="w-0 h-0 hidden"
-              onChange={handleFileChnage}
+              className="w-1 h-1 translate-x-20 -translate-y-8 -z-10" onChange={handleFileChnage}
             />
-            <button
-              className="w-full ring-1 mt-1 ring-red rounded-sm text-red flex justify-center items-center gap-4 mb-2 py-3 px-5"
-              onClick={handleOpenFile}
-            >
-              Upload Resume
-            </button>
             <small className="font-rob400 text-xs md:text-sm text-gret">
               {quoteFile?.name && (
-                <span className="cursor-pointer" onClick={handleRemove}>
-                  x{" "}
+                <span title="remove file" className="cursor-pointer text-red rounded px-1 font-pop500 ring-1 ring-red mr-2 hover:bg-red hover:text-white" onClick={handleRemove}>
+                  x
                 </span>
               )}
               {quoteFile?.name
@@ -274,7 +285,7 @@ const ApplyForm = ({ formTitle, detail, className }) => {
         </div>
 
         <AnimateButton
-          className={`${button.red} w-full before:bg-primary hover:bg-primary`}
+          className={`${button.red} w-full before:bg-primary hover:bg-primary hover:before:scale-[100]`}
           disabled={form.disabled}
         >
           {form.disabled ? "Applying..." : "Apply"}

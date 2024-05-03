@@ -35,13 +35,20 @@ export default function Industry({ slug }) {
   return (
     <div>
       <HeroSection videoSrc={hero.bgImage}>
-        <HeroContentBox title={hero.title} detail={hero.detail} />
+        <HeroContentBox
+          title={hero.title}
+          customDetail={
+            <p className="font-pop500 text-lg md:text-[22px] mb-10">{hero.detail}</p>
+          }
+          themeColor={hero?.themeColor}
+        />
 
         <GuideForm
           title={"Download Our Guide"}
           detail={
             "Fill the form to unlock valuable insights and expertise by downloading our guide for free."
           }
+          themeColor={hero?.themeColor}
         />
       </HeroSection>
       <AboutEachIndustry
@@ -51,6 +58,7 @@ export default function Industry({ slug }) {
         buttonText={reliability.buttonText}
         image={reliability.image}
         slug={slug}
+        gapX={"gap-x-9"}
       />
       {reliability2?.title && (
         <AboutEachIndustry2
@@ -74,7 +82,7 @@ export default function Industry({ slug }) {
           title={examples.title}
           subTitle={examples.subTitle}
           detail={examples.detail}
-        />      
+        />
       )}
     </div>
   );

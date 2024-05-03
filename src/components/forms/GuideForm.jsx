@@ -6,7 +6,7 @@ import { DesignContext } from "@/context/design";
 import { downloadGuideSchema } from "@/lib/forms/downloadGuideSchema";
 import { Form } from "./Form";
 
-const GuideForm = ({ title, detail, className }) => {
+const GuideForm = ({ title, detail, className, themeColor }) => {
   const {
     theme: { button },
     form,
@@ -23,7 +23,8 @@ const GuideForm = ({ title, detail, className }) => {
     <div
       className={cn(
         "lg:col-span-2 text-secondary mx-auto max-w-[496px] md:max-w-none",
-        className && className
+        className && className,
+        themeColor && themeColor
       )}
     >
       <h1 className="text-2xl lg:text-4xl mb-1">{title}</h1>
@@ -35,12 +36,15 @@ const GuideForm = ({ title, detail, className }) => {
         subject={title}
         subjectForAdmin="Download Guide"
       >
-      {/* <form onSubmit={handleSubmit}> */}
+        {/* <form onSubmit={handleSubmit}> */}
         <div className="mb-4">
           <input
             type="text"
             id="firstName"
-            className="rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide"
+            className={cn(
+              "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
+              themeColor && "text-primary placeholder:text-primary"
+            )}
             placeholder="First Name"
           />
         </div>
@@ -48,7 +52,10 @@ const GuideForm = ({ title, detail, className }) => {
           <input
             type="text"
             id="lastName"
-            className="rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide"
+            className={cn(
+              "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
+              themeColor && "text-primary placeholder:text-primary"
+            )}
             placeholder="Last Name"
           />
         </div>
@@ -57,7 +64,10 @@ const GuideForm = ({ title, detail, className }) => {
             type="email"
             id="email"
             required
-            className="rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide"
+            className={cn(
+              "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
+              themeColor && "text-primary placeholder:text-primary"
+            )}
             placeholder="Email *"
           />
         </div>
@@ -65,7 +75,10 @@ const GuideForm = ({ title, detail, className }) => {
           <input
             type="text"
             id="phoneNumber"
-            className="rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide"
+            className={cn(
+              "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
+              themeColor && "text-primary placeholder:text-primary"
+            )}
             placeholder="Phone Number"
           />
         </div>

@@ -13,7 +13,7 @@ export default function OpenPositions() {
   } = useContext(DesignContext);
   const route = useRouter();
   return (
-    <section className="pt-20 pb-10 bg-secondary bg-[url('/images/lines.svg')] bg-contain bg-top">
+    <section className="pt-20 pb-10 bg-secondary bg-[url('/images/lines.svg')] bg-halfHeight lg:bg-minusTop180">
       <FullWidthContent className={"max-w-[1920px]"}>
         <h2 className="text-xs md:text-sm text-red text-center mb-1 font-rob700 widest">
           JOBS

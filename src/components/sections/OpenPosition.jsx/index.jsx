@@ -5,6 +5,7 @@ import { useContext, useMemo, useState } from "react";
 import { DesignContext } from "@/context/design";
 import Modal from "@/components/Modals/ApplyModals/ApplyModal";
 import ApplyModalData from "@/components/Modals/ApplyModals/ApplyModalData";
+import ContactUs from "../ContactUs";
 export default function OpenPosition({ slug }) {
   const {
     theme: { button },
@@ -26,7 +27,7 @@ export default function OpenPosition({ slug }) {
   }, [careers, slug]);
 
   return (
-    <section className="pt-20 ">
+    <section className="pt-10 bg-secondary">
       <FullWidthContent>
         <h2 className="text-xs md:text-sm text-red text-center mb-1">
           JOB DESCRIPTION
@@ -79,9 +80,10 @@ export default function OpenPosition({ slug }) {
           </AnimateButton>
         </div>
       </FullWidthContent>
+      <ContactUs />
 
       <Modal isOpen={isOpen} onClose={handleOnClose}>
-        <ApplyModalData title={career.title} />
+        <ApplyModalData title={career.title}  isOpen={isOpen} onClose={handleOnClose}/>
       </Modal>
     </section>
   );

@@ -6,9 +6,10 @@ const HeroSection = ({ children, videoSrc, bgImage, className, col }) => {
     ? {
       background: `url(${bgImage})`,
       backgroundRepeat: "no-repeat",
-      backgrondPosition: "center",
+      backgrondPosition: "bottom center",
       backgroundSize: "cover",
       backgroundColor: "var(--color-black)",
+      
       }
     : {};
 

@@ -15,7 +15,8 @@ const HeroContentBox = ({
   buttonText,
   buttonLink,
   guide,
-  buttonTarget
+  buttonTarget,
+  themeColor
 }) => {
   const {
     theme: { button },
@@ -24,7 +25,8 @@ const HeroContentBox = ({
     <div
       className={cn(
         "lg:col-span-3 text-secondary max-w-[740px] lg:max-w-[804px]",
-        className && className
+        className && className,
+        themeColor && themeColor 
       )}
     >
       {customH1 ? (

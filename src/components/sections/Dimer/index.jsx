@@ -17,7 +17,7 @@ export default function Dimer() {
       >
         <HeroContentBox
           title={"Dimer & Conformal Machine Sales"}
-          detail={"Coating Options For All Your Protective Needs."}
+          detail={"Get the highest quality dimer and machines with guaranteed superior customer service forin-house conformal coating."}
           buttonText={"Buy Now"}
           buttonLink=""
           guide={"Contact us directly to complete your purchase."}

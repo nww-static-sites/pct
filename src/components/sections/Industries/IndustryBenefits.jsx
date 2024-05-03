@@ -3,7 +3,7 @@ import { FullWidthContent } from "@/components/Sections";
 
 const IndustryBenefits = ({ title, subTitle, detail, benefits }) => {
   return (
-    <section className="bg-white lg:pt-10 mt-10">
+    <section className="bg-secondary lg:pt-5">
       <FullWidthContent className="min-h-[400px] lg:pt-10">
         <div className="bg-black px-3 py-8 md:p-10 lg:p-20 rounded-xl">
           <h1 className="text-red text-[12px] md:text-[16px] text-center tracking-widest mb-1">

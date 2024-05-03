@@ -1,7 +1,6 @@
 import ContactUs from "@/components/sections/ContactUs";
 import Industry from "@/components/sections/Industries";
 import { Fragment } from "react";
-import { Metadata, ResolvingMetadata } from 'next'
 
 
 export async function generateMetadata({params}){

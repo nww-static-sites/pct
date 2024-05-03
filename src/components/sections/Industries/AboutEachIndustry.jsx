@@ -17,23 +17,24 @@ const AboutEachIndustry = ({
   buttonText,
   image,
   slug,
+  gapX
 }) => {
   const {
     theme: { button },
   } = useContext(DesignContext);
 
   return (
-    <section className="pt-8 lg:pt-14 bg-white">
+    <section className="pt-8 lg:pt-14 bg-secondary">
       <FullWidthContent>
-        <div className="flex flex-col items-center justify-center lg:flex-row lg:gap-x-11">
+        <div className="flex flex-col items-center justify-center lg:flex-row lg:gap-x-4">
           <Image
-            className="w-full h-auto mb-5 max-w-[565px] mx-auto lg:max-h-none lg:mb-0 lg:w-[46vw] lg:max-w-[665px] object-contain"
+            className="w-full lg:mb-5 max-w-[565px] mx-auto lg:mr-0 lg:w-[46vw] lg:max-w-[665px]"
             src={image}
             alt={title}
             width={665}
             height={701}
           />
-          <div className="flex-1 mt-auto mb-auto text-center lg:text-left py-0 lg:py-16">
+          <div className="flex-1 mt-auto mb-auto text-center lg:text-left py-8 max-w-[709px]">
             <h2 className="inline h-line text-xs md:text-sm mb-1 before:bg-red before:w-[30px] before:h-[2px] pl-[36px] text-red">
               {subTitle}
             </h2>
@@ -79,7 +80,7 @@ const AboutEachIndustry = ({
             )}
             <Link href="#contact">
               <AnimateButton
-                className={`${button.red} mt-4 shadow-[0_1px_8px_0px_rgba(0,0,0,0.0)] shadow-red32 hover:shadow-none before:bg-primary hover:bg-primary`}
+                className={`${button.red} px-6 md:px-8 mt-4 shadow-[0_1px_8px_0px_rgba(0,0,0,0.0)] shadow-red32 hover:shadow-none before:bg-primary hover:bg-primary`}
               >
                 {buttonText}
               </AnimateButton>

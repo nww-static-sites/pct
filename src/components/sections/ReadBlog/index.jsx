@@ -52,9 +52,14 @@ export default function ReadBlog({ slug }) {
         col={"flex-col"}
       >
         <HeroContentBox
-          title={
-            "Conformal Coating for Extreme Environments: Challenges and Solutions"
+          customH1={
+            <h1 className="text-3xl md:text-5xl mb-3">
+              {
+                "Conformal Coating for Extreme Environments: Challenges and Solutions"
+              }
+            </h1>
           }
+          title={""}
           detail={
             "Extreme environments pose unique challenges to electronic components. In this blog post, we delve into the world of conformal coating in extreme conditions, exploring the challenges faced, the significance of effective coating, and the role Parylene plays in providing robust solutions."
           }
@@ -72,9 +77,9 @@ export default function ReadBlog({ slug }) {
       <section className="py-20 bg-secondary">
         <FullWidthContent className="flex flex-col items-center md:items-start lg:flex-row gap-x-10">
           <BlogSection blog={eachBlog} />
-          <div className="pt-12 px-3 w-full md:w-[354px] mx-auto">
-            <div className="text-center text-secondary bg-black rounded-2xl px-4 py-9 max-w-[424px] lg:max-w-[324px] mx-auto shadow-[0px_4px_29px_0px] shadow-gret28">
-              <h2 className="font-rob700 md:text-3xl mb-3 mx-2">
+          <div className="pt-12 px-3 w-full md:w-[442px] mx-auto sticky top-[36px]">
+            <div className="text-center text-secondary bg-black rounded-2xl px-4 py-9 max-w-[442px] md:w-[424px] mx-auto shadow-[0px_4px_29px_0px] shadow-gret28 ">
+              <h2 className="font-rob700 text-2xl md:text-3xl mb-3 mx-2">
                 Stay <span className="text-red">Connected</span> With Us
               </h2>
               <p className="mb-9 text-xs">
@@ -88,9 +93,9 @@ export default function ReadBlog({ slug }) {
                 subject={"Stay Connected with Us"}
                 subjectForAdmin="New Subscriber"
               >
-                <div className="rounded-[20px] gap-y-2 bg-transparent md:bg-secondary w-full flex flex-wrap md:flex-nowrap items-center justify-center mb-4">
-                  <Input
-                    className="w-auto ring-0 rounded-md md:rounded-[20px] text-secondary md:text-primary h-[36px] md:h-[42px] border-none bg-secondary md:bg-transparent  placeholder:text-gret"
+                <div className="rounded-[20px] w-auto gap-y-2 bg-transparent md:max-w-[351px] mx-auto md:bg-secondary flex flex-wrap md:flex-nowrap items-center justify-between mb-4">
+                  <input
+                    className="ring-0 w-full md:w-auto px-4 rounded-md md:rounded-[20px] text-secondary md:text-primary h-[36px] md:h-[42px] border-none bg-secondary md:bg-transparent  placeholder:text-gret"
                     type="email"
                     id={"email"}
                     name={"email"}

@@ -59,8 +59,8 @@ const Header = () => {
           <div className="flex gap-x-6 items-center">
             {headerContactList.map((item, index) => {
               return (
-                <>
-                  <Link href={item.href} key={item.id}>
+                <div key={item.id} className="flex gap-x-6 items-center">
+                  <Link href={item.href}>
                     <TextWithIcon leftIcon={item.icon} text={item.value} />
                   </Link>
                   {index === headerContactList.length - 1 ? (
@@ -70,7 +70,7 @@ const Header = () => {
                       {"|"}
                     </span>
                   )}
-                </>
+                </div>
               );
             })}
           </div>
@@ -127,7 +127,6 @@ const Header = () => {
             {headerNavList.length
               ? headerNavList.map((item) => {
                   const isActive = pathName === item.href;
-                  console.log(pathName);
                   // Service Sub Menu
                   if (item.href === "" && item.value === "Services") {
                     return (
@@ -236,7 +235,6 @@ const Header = () => {
                     {headerNavList.length
                       ? headerNavList.map((item) => {
                           const isActive = pathName === item.href;
-                          console.log(pathName);
                           // Service Sub Menu
                           if (item.href === "" && item.value === "Services") {
                             return (

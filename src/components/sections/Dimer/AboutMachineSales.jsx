@@ -11,7 +11,7 @@ export default function AboutMachineSales() {
     theme: { button },
   } = useContext(DesignContext);
   return (
-    <section className="pt-8 lg:pt-14 bg-white">
+    <section className="pt-8 lg:pt-14 bg-secondary">
       <FullWidthContent className="">
         <div className="flex flex-col items-center justify-center md:flex-row gap-y-12 lg:flex lg:gap-x-16">
           <div className="flex-1 mt-auto mb-auto text-center lg:text-left py-0 lg:py-16 ">
@@ -27,7 +27,7 @@ export default function AboutMachineSales() {
             </p>
             <Link href={"#contact"}>
               <AnimateButton
-                className={`${button.red} shadow-[0_1px_8px_0px_rgba(0,0,0,0.0)] shadow-red32 hover:shadow-none before:bg-primary hover:bg-primary`}
+                className={`${button.red} px-6 md:px-8 shadow-[0_1px_8px_0px_rgba(0,0,0,0.0)] shadow-red32 hover:shadow-none before:bg-primary hover:bg-primary`}
               >
                 Contact Us Now
               </AnimateButton>

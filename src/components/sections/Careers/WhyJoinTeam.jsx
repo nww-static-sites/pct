@@ -23,7 +23,7 @@ export default function WhyJoinTeam() {
             return (
               <div
                 key={item.id}
-                className="flex-1 md:flex-none grid place-content-center md:w-[324px] bg-white ring-[#f4f4f4] ring-1 rounded-[4px] px-5 py-8 space-y-3 text-center"
+                className="flex-1 md:flex-none grid place-content-center md:min-w-[220px] md:w-[324px] lg:w-[20vw] md:max-w-[324px] bg-white ring-[#f4f4f4] ring-1 rounded-[4px] px-5 py-8 space-y-3 text-center"
               >
                 <Image
                   src={item.image}

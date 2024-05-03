@@ -15,12 +15,12 @@ const ParyleneDimer = () => {
     data: { testinmonials },
   } = useContext(DesignContext);
   return (
-    <section className="bg-white pt-[72px] lg:bg-[url('/images/lines.svg')] lg:bg-contain">
+    <section className="bg-secondary pt-[72px] lg:bg-[url('/images/lines.svg')] lg:bg-contain">
       <FullWidthContent>
         <div className="flex flex-col lg:flex-row lg:gap-x-16">
           <div className="flex-1">
             <Image
-              className="w-full h-auto mb-5 max-w-[596px] mx-auto lg:max-h-none lg:mb-0 lg:w-[48vw] lg:max-w-[696px] object-cover"
+              className="w-full h-auto mb-5 max-w-[596px] mx-auto lg:max-h-none lg:mb-0 lg:w-[48vw] lg:max-w-[696px] object-contain"
               src={"/images/parylene-dimer.png"}
               alt={"parylene-dimer"}
               width={696}
@@ -39,13 +39,13 @@ const ParyleneDimer = () => {
             </p>
             <ul className="inline-block mx-auto max-w-[260px] md:max-w-[320px] lg:max-w-none text-left space-y-2 mb-5 pl-2 list-image-[url(/images/icons/list-check.svg)]">
               <li className="ml-8">
-                <p className="-translate-y-2">Crevice Penetration</p>
+                <p className="-translate-y-2 font-pop400">Crevice Penetration</p>
               </li>
               <li className="ml-8">
-                <p className="-translate-y-2">Dry Lubricity</p>
+                <p className="-translate-y-2 font-pop400">Dry Lubricity</p>
               </li>
               <li className="ml-8">
-                <p className="-translate-y-2">High Dielectric Strength </p>
+                <p className="-translate-y-2 font-pop400">High Dielectric Strength </p>
               </li>
             </ul>
             <br />
@@ -62,7 +62,7 @@ const ParyleneDimer = () => {
           </div>
         </div>
       </FullWidthContent>
-      <div className="pt-20 lg:pt-36 pb-12 bg-clip-path-1 text-secondary bg-black">
+      <div className="pt-20 lg:pt-36 pb-12 bg-clip-path-1 text-secondary bg-[url('/images/our-client-says-background.png')] bg-cover bg-center bg-no-repeat">
         <FullWidthContent className="max-w-[1400px] flex items-center justify-between flex-col md:flex-row md:gap-x-44 gap-y-12">
           <div className="flex-1 max-w-[627px] space-y-2 text-center md:text-left pt-10 pb-6 md:pt-16 md:pb-8 gap-y-4">
             <h2 className="text-xs md:text-sm mb-1 tracking-widest text-red">
@@ -96,7 +96,7 @@ const ParyleneDimer = () => {
                     <Image
                       src={item.image}
                       alt=""
-                      className="rounded-full mb-4 mx-auto"
+                      className="rounded-full mb-10 mx-auto"
                       width={100}
                       height={100}
                     />
@@ -136,23 +136,23 @@ const ParyleneDimer = () => {
             </p>
             <ul className="inline-block mx-auto max-w-[260px] md:max-w-[320px] lg:max-w-none text-left space-y-2 mb-5 pl-2 list-image-[url(/images/icons/list-check.svg)]">
               <li className="ml-8">
-                <p className="-translate-y-2">
+                <p className="-translate-y-2 font-pop400">
                   {
-                    "Low permeability to moisture, chemicals, and corrosive gassessssss"
+                    "Low permeability to moisture, chemicals, and corrosive gasses"
                   }
                 </p>
               </li>
               <li className="ml-8">
-                <p className="-translate-y-2">Most Versatile</p>
+                <p className="-translate-y-2 font-pop400">Most Versatile</p>
               </li>
               <li className="ml-8">
-                <p className="-translate-y-2">Pressure Resistant</p>
+                <p className="-translate-y-2 font-pop400">Pressure Resistant</p>
               </li>
             </ul>
             <br />
             <Link href={"#contact"}>
               <AnimateButton
-                className={`${button.red} mb-2 shadow-[1px_1px_8px_0px] shadow-red32 hover:shadow-none before:bg-primary hover:bg-primary`}
+                className={`${button.red} px-6 md:px-8 mb-2 shadow-[1px_1px_8px_0px] shadow-red32 hover:shadow-none before:bg-primary hover:bg-primary`}
               >
                 {"Purchase Now"}
               </AnimateButton>
