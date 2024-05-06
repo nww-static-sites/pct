@@ -23,12 +23,12 @@ const OurCertifications = () => {
               quality is well-placed.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center items-center md:justify-center w-full gap-4 md:gap-6 overflow-x-auto p-2">
+          <div className="flex md:flex-wrap items-center md:justify-center w-full md:gap-6 overflow-x-auto p-2">
             {ourCertifications.map((item) => {
               return (
                 <div
                   key={item.id}
-                  className="grid ring-2 ring-gret28 shrink-0 place-content-center w-[114px] h-[114px] lg:w-[158px] lg:h-[158px] transition-all duration-500 relative group origin-center  hover:w-36 hover:h-36 md:hover:w-40 md:hover:h-40  lg:hover:w-48 lg:hover:h-48"
+                  className="grid ring-1 ring-gret28 shrink-0 place-content-center w-[114px] h-[114px] lg:w-[158px] lg:h-[158px] transition-all duration-500 relative group origin-center  hover:w-36 hover:h-36 md:hover:w-40 md:hover:h-40  lg:hover:w-48 lg:hover:h-48"
                 >
                   <Image
                     src={item.bgImage}

@@ -37,8 +37,8 @@ export const Button = ({ children, className, selected, ...props }) => {
   return (
     <button
       className={cn(
-        className,
         "text-[16px] transition-all duration-500",
+        className,
         selected && selected
       )}
       {...props}

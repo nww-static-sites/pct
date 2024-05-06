@@ -139,7 +139,7 @@ const WhatWeOffer = () => {
       </FullWidthContent>
       <FullWidthContent className="px-2">
         <div className="bg-red relative py-[72px] px-6 rounded-[20px] text-center">
-          <h1 className="text-5xl text-secondary">
+          <h1 className="text-[32px] md:text-5xl text-secondary mb-1">
             <span className="text-shadow">Download</span> Our Guide
           </h1>
           <p className="text-[16px] font-pop text-secondary mb-12 md:mb-20">

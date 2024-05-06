@@ -7,7 +7,7 @@ export default function TeamCard({ image, name, position, social }) {
       <Image
         src={image}
         alt={name}
-        className="rounded-t-md w-full h-[232px] md:w-[314px] md:h-[332px] object-cover"
+        className="rounded-t-md w-full h-[332px] md:w-[314px] md:h-[332px] object-cover"
         width={314}
         height={332}
       />

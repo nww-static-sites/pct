@@ -45,7 +45,7 @@ const AboutEachIndustry = ({
             <h2 className="text-[28px] md:text-3xl">{subTitle2}</h2>
             <p className="mb-2 md:mb-5 text-[13px] md:text-[15px]">{detail2}</p>
             {slug === "consumer-electronics" ? (
-              <div className="flex gap-x-2 flex-wrap mb-5">
+              <div className="flex gap-x-2 flex-wrap mb-5 justify-center md:justify-start">
                 <Link
                   className="underline text-red text-sm"
                   href="https://www.youtube.com/watch?v=7jdAVf5V9qs&t=7s"

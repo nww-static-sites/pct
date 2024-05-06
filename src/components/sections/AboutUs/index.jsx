@@ -42,7 +42,7 @@ export default function About() {
         buttonText={"Contact Us Now"}
         image={"/images/about-us-story.jpg"}
       />
-      <FullWidthContent className="py-12 md:py-20">
+      <FullWidthContent className="pt-12 md:py-20 bg-secondary">
         <h2 className="text-xs text-center md:text-sm mb-1 text-red tracking-widest font-rob700">
           TEAM
         </h2>

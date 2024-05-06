@@ -65,7 +65,7 @@ const OurAchievements = () => {
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <FullWidthContent className="flex flex-col md:flex-row pt-16 pb-6 md:pt-24 md:pb-6 gap-y-4 gap-x-44 mt-auto mb-auto">
+          <FullWidthContent className="flex max-w-[384px] md:max-w-none flex-col md:flex-row pt-16 pb-6 md:pt-24 md:pb-6 gap-y-4 gap-x-44 mt-auto mb-auto">
             <div className="flex-1 max-w-[554px] mx-auto space-y-2 text-center md:text-left">
               <h4 className="text-2xl lg:text-4xl">Request a Proposal</h4>
               <p className="text-xs lg:text-[16px]">
@@ -74,7 +74,7 @@ const OurAchievements = () => {
                 us.
               </p>
             </div>
-            <div className="flex-1 max-w-[554px] mx-auto flex items-center justify-center gap-x-2">
+            <div className="flex-1 md:max-w-[554px] mx-auto flex items-center justify-center gap-x-2">
               <svg
                 width="83"
                 height="83"

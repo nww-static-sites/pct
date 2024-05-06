@@ -5,6 +5,7 @@ import Image from "next/image";
 import ContactUs from "../ContactUs";
 import OpenPositions from "./OpenPosition";
 import WhyJoinTeam from "./WhyJoinTeam";
+import Link from "next/link";
 
 export default function Career() {
   return (
@@ -21,9 +22,18 @@ export default function Career() {
           }
           buttonText={"Download Employee Application"}
           buttonLink="/docs/Employee Application.pdf"
-          buttonTarget = {"_blank"}
-          guide={
-            "Downloadable employee application – Please email pdf to dpribish@pctcc.com and jruiz@pctcc.com"
+          buttonTarget={"_blank"}
+          customGuide={
+            <p className="font-pop400 text-xs md:text-sm mb-10">
+              {"Downloadable employee application - Please email pdf to "}
+              <Link href="mailto:dpribish@pctcc.com" className="underline">
+                dpribish@pctcc.com
+              </Link>
+              {"and"}
+              <Link href="mailto:jruiz@pctcc.com" className="underline">
+                jruiz@pctcc.com
+              </Link>
+            </p>
           }
         />
         <div className="lg:col-span-2 text-secondary mx-auto max-w-[467px] md:max-w-none">

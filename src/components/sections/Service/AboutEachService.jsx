@@ -21,7 +21,7 @@ const AboutEachService = ({
   } = useContext(DesignContext);
 
   return (
-    <section className="pt-8 lg:pt-0 bg-white bg-[url('/images/lines.svg')] bg-contain bg-right bg-no-repeat">
+    <section className="pt-8 lg:pt-0 bg-secondary bg-[url('/images/lines.svg')] bg-contain bg-right bg-no-repeat">
       <FullWidthContent>
         <div className="flex-column lg:flex lg:gap-x-16">
           <Image

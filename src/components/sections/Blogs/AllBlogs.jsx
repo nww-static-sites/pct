@@ -14,10 +14,12 @@ export function AllBlogs() {
 
   return (
     <div className="flex-1">
-      <h2 className="inline h-line text-xs md:text-sm mb-1 before:bg-red before:w-[30px] before:h-[2px] pl-[36px] text-red">
+      <div className="text-center md:text-left">
+      <h2 className="inline h-line text-xs mx-auto md:text-sm mb-1 before:bg-red before:w-[30px] before:h-[2px] pl-[36px] text-red">
         READ BLOGS
       </h2>
-      <h1 className="text-[28px] md:text-5xl mb-9">All Blogs</h1>
+      </div>
+      <h1 className="text-[28px] md:text-5xl text-center md:text-left mb-9">All Blogs</h1>
       <div className="flex flex-col w-full gap-y-6 mb-7">
         {BlogsContent.map((item) => {
           return (
@@ -38,7 +40,7 @@ export function AllBlogs() {
                 </h4>
                 <p className="text-xs md:text-gret mb-11">{item.excerption}</p>
                 <Button
-                  className={`${button.red} py-3 px-5 text-[10px] rounded-md mb-2`}
+                  className={`${button.red} py-3 px-5 text-[10px] tracking-wider rounded-md mb-2`}
                   onClick={() => route.push(`/read-blog/${item.slug}`)}
                 >
                   READ MORE

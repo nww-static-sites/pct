@@ -29,10 +29,10 @@ export default function OpenPosition({ slug }) {
   return (
     <section className="pt-10 bg-secondary">
       <FullWidthContent>
-        <h2 className="text-xs md:text-sm text-red text-center mb-1">
+        <h1 className="text-xs md:text-sm text-red text-center mb-1 tracking-widest">
           JOB DESCRIPTION
-        </h2>
-        <h1 className="text-[28px] md:text-5xl text-center mb-9">
+        </h1>
+        <h1 className="text-3xl md:text-5xl text-center mb-5 md:mb-9">
           {career.title}
         </h1>
         {career?.detail ? <p className="mb-3">{career.detail}</p> : ""}
@@ -50,9 +50,9 @@ export default function OpenPosition({ slug }) {
             ? career?.other?.map((item) => {
                 return (
                   <div key={item.title} className="mb-5">
-                    <h2 className="text-2xl mb-3">{item.title}</h2>
+                    <h2 className="text-[20px] md:text-2xl mb-3">{item.title}</h2>
                     {item.detail ? (
-                      <p className="text-[15px]">{item.detail}</p>
+                      <p className="text-[13px] md:text-[15px]">{item.detail}</p>
                     ) : (
                       ""
                     )}
@@ -60,7 +60,7 @@ export default function OpenPosition({ slug }) {
                       <ul className="list-disc pl-5 text-[15px]">
                         {item.list.map((itemList) => (
                           <li key={itemList.id}>
-                            <p className="text-primary">{itemList.detail}</p>
+                            <p className="text-primary text-[13px] md:text-[15px]">{itemList.detail}</p>
                           </li>
                         ))}
                       </ul>

@@ -17,7 +17,7 @@ const HeroSection = ({ children, videoSrc, bgImage, className, col }) => {
     <section
       style={style}
       className={cn(
-        "min-h-[628px] flex relative py-10 items-center justify-center",
+        "min-h-[560px] flex relative py-10 items-center justify-center",
         className && className
       )}
     >

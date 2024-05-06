@@ -49,7 +49,6 @@ export default function ReadBlog({ slug }) {
       <HeroSection
         bgImage="/images/blogs-bg.jpg"
         className={"min-h-0"}
-        col={"flex-col"}
       >
         <HeroContentBox
           customH1={
@@ -74,10 +73,10 @@ export default function ReadBlog({ slug }) {
         />
       </HeroSection>
 
-      <section className="py-20 bg-secondary">
+      <section className="pt-10 md:py-20 bg-secondary">
         <FullWidthContent className="flex flex-col items-center md:items-start lg:flex-row gap-x-10">
           <BlogSection blog={eachBlog} />
-          <div className="pt-12 px-3 w-full md:w-[442px] mx-auto sticky top-[36px]">
+          <div className="hidden lg:block pt-12 px-3 w-full md:w-[442px] mx-auto sticky top-[36px]">
             <div className="text-center text-secondary bg-black rounded-2xl px-4 py-9 max-w-[442px] md:w-[424px] mx-auto shadow-[0px_4px_29px_0px] shadow-gret28 ">
               <h2 className="font-rob700 text-2xl md:text-3xl mb-3 mx-2">
                 Stay <span className="text-red">Connected</span> With Us

@@ -264,7 +264,8 @@ export const industriesServed = [
         detail: "Coating Options For All Your Protective Needs.",
         buttonText: "Get in touch",
         buttonLink: "",
-        themeColor: "text-primary",
+        themeColor: "lg:text-primary",
+        // formTheme: "lg:bg-secodary lg:text-primary lg:placeholder:text-se",
       },
       reliability: {
         image: "/images/industries/elastomers/reliability.png",

@@ -4,7 +4,7 @@ import PCTDimerCard from "../PCTDimerCard";
 
 const DimerProperties = () => {
   return (
-    <section className="bg-secondary pt-[72px]">
+    <section className="bg-secondary pt-9 md:pt-[72px]">
       <FullWidthContent className="text-center mb-6">
         <h2 className="text-xs md:text-sm mb-1 text-red font-rob500 tracking-widest">
           PROPERTIES

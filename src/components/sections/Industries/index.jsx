@@ -1,9 +1,7 @@
 "use client";
 
-import { FullWidthContent } from "@/components/Sections";
 import { HeroContentBox } from "@/components/containers";
 import { GuideForm } from "@/components/forms";
-import FetureEachService from "@/components/sections/Service/FeatureEachService";
 import HeroSection from "@/components/sections/HeroSection";
 import { DesignContext } from "@/context/design";
 import { useContext, useMemo } from "react";
@@ -34,11 +32,11 @@ export default function Industry({ slug }) {
 
   return (
     <div>
-      <HeroSection videoSrc={hero.bgImage}>
+      <HeroSection videoSrc={hero.bgImage} className={"py-5 md:py-10"}>
         <HeroContentBox
           title={hero.title}
           customDetail={
-            <p className="font-pop500 text-lg md:text-[22px] mb-10">{hero.detail}</p>
+            <p className="font-pop500 text-[13px] md:text-[22px] mb-5 md:mb-10">{hero.detail}</p>
           }
           themeColor={hero?.themeColor}
         />

@@ -12,6 +12,8 @@ const GuideForm = ({ title, detail, className, themeColor, formTheme }) => {
     form,
   } = useContext(DesignContext);
 
+  const inputClasses = "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-primary45 md:bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide"
+
   const getFormValues = (form) => ({
     firstName: form.firstName.value,
     lastName: form.lastName.value,
@@ -24,7 +26,7 @@ const GuideForm = ({ title, detail, className, themeColor, formTheme }) => {
       className={cn(
         "lg:col-span-2 text-secondary mx-auto max-w-[496px] md:max-w-none",
         className && className,
-        themeColor && themeColor
+        themeColor && "lg:text-primary"
       )}
     >
       <h1 className="text-2xl lg:text-4xl mb-1">{title}</h1>
@@ -42,8 +44,7 @@ const GuideForm = ({ title, detail, className, themeColor, formTheme }) => {
             type="text"
             id="firstName"
             className={cn(
-              "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
-              themeColor && "text-primary placeholder:text-primary ",
+              inputClasses,
               formTheme && formTheme
             )}
             placeholder="First Name"
@@ -54,8 +55,7 @@ const GuideForm = ({ title, detail, className, themeColor, formTheme }) => {
             type="text"
             id="lastName"
             className={cn(
-              "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
-              themeColor && "text-primary placeholder:text-primary",
+              inputClasses,
               formTheme && formTheme
             )}
             placeholder="Last Name"
@@ -67,8 +67,8 @@ const GuideForm = ({ title, detail, className, themeColor, formTheme }) => {
             id="email"
             required
             className={cn(
-              "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
-              themeColor && "text-primary placeholder:text-primary",
+              // "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
+              inputClasses,
               formTheme && formTheme
             )}
             placeholder="Email *"
@@ -79,8 +79,7 @@ const GuideForm = ({ title, detail, className, themeColor, formTheme }) => {
             type="text"
             id="phoneNumber"
             className={cn(
-              "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide",
-              themeColor && "text-primary placeholder:text-primary",
+              inputClasses,
               formTheme && formTheme
               
             )}

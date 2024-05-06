@@ -17,8 +17,8 @@ const ParyleneDimer = () => {
   return (
     <section className="bg-secondary pt-[72px] lg:bg-[url('/images/lines.svg')] lg:bg-contain">
       <FullWidthContent>
-        <div className="flex flex-col lg:flex-row lg:gap-x-16">
-          <div className="flex-1">
+        <div className="flex flex-col lg:flex-row lg:gap-x-16 -translate-y-28 md:translate-y-0">
+          <div className="md:flex-1 mb-12 md:mb-0">
             <Image
               className="w-full h-auto mb-5 max-w-[596px] mx-auto lg:max-h-none lg:mb-0 lg:w-[48vw] lg:max-w-[696px] object-contain"
               src={"/images/parylene-dimer.png"}

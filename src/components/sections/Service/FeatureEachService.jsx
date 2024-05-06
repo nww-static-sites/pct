@@ -17,12 +17,12 @@ const FetureEachService = ({
   } = useContext(DesignContext);
 
   return (
-    <section className="bg-white py-24">
+    <section className="bg-secondary pt-10 md:py-20">
       <FullWidthContent>
         <h1 className="text-red text-[12px] md:text-[16px] text-center mb-1">
           {subTitle}
         </h1>
-        <h1 className="text-[28px] md:text-5xl text-center mb-10">{title}</h1>
+        <h1 className="text-[28px] md:text-5xl text-center mb-5 md:mb-10">{title}</h1>
 
         <div className="flex flex-col md:flex-row gap-6">
           <ul className="flex flex-col gap-6">

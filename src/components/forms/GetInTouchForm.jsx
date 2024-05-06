@@ -255,7 +255,7 @@ const GetInTouchForm = ({ title, detail, className }) => {
               />
             </svg>
           </button>
-          <small className="font-rob400 text-xs md:text-sm text-gret">
+          <small className="block text-left w-full font-rob400 text-xs md:text-sm text-gret">
             {quoteFile?.name && (
               <span className="cursor-pointer" onClick={handleRemove}>
                 X{" "}

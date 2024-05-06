@@ -13,7 +13,7 @@ export default function OpenPositions() {
   } = useContext(DesignContext);
   const route = useRouter();
   return (
-    <section className="pt-20 pb-10 bg-secondary bg-[url('/images/lines.svg')] bg-halfHeight lg:bg-minusTop180">
+    <section className="pt-10 pb-0 md:pt-20 md:pb-10 bg-secondary bg-[url('/images/lines.svg')] bg-halfHeight lg:bg-minusTop180">
       <FullWidthContent className={"max-w-[1920px]"}>
         <h2 className="text-xs md:text-sm text-red text-center mb-1 font-rob700 widest">
           JOBS
@@ -40,9 +40,9 @@ export default function OpenPositions() {
                   </div>
                   <Button
                     onClick={() => route.push(`/open-position/${career.slug}`)}
-                    className={`${button.red} overflow-hidden w-[162px] h-[46px] md:w-[220px] md:h-[52px] font-rob500 text-[16px] rounded-2xl flex items-center justify-between`}
+                    className={`${button.red} flex-1 md:flex-none overflow-hidden max-w-[162px] md:max-w-none h-[46px] md:w-[220px] md:h-[52px] font-rob500 rounded-2xl flex items-center justify-between`}
                   >
-                    <span className="flex-1 text-left pl-4">View Opening</span>
+                    <span className="flex-1 text-left pl-4 text-[13px] md:text-[16px] mr-1">View Opening</span>
                     <span className="w-[40px] h-full grid place-content-center bg-primary10">
                       <svg
                         width="5"

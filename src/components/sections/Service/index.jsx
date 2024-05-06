@@ -29,7 +29,7 @@ export default function Service({ slug }) {
   if (service.page) {
     return (
       <div>
-        <HeroSection bgImage={hero.bgImage}>
+        <HeroSection bgImage={hero.bgImage} className={"py-5 md:py-10"}>
           <HeroContentBox
             title={hero.title}
             detail={hero.detail}
