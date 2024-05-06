@@ -12,7 +12,7 @@ const GuideForm = ({ title, detail, className, themeColor, formTheme }) => {
     form,
   } = useContext(DesignContext);
 
-  const inputClasses = "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-primary45 md:bg-white200 text-sm placeholder:text-secondaryInput placeholder:tracking-wide"
+  const inputClasses = "rounded-[4px] w-full px-5 py-3 font-rob400 border border-gray bg-primary45 md:bg-white200 text-sm placeholder:text-secondary placeholder:tracking-wide"
 
   const getFormValues = (form) => ({
     firstName: form.firstName.value,
