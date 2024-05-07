@@ -74,6 +74,7 @@ export default function Industry({ slug }) {
         title={benefits.title}
         subTitle={benefits.subTitle}
         detail={benefits.detail}
+        slug={slug}
       />
 
       {examples?.examples && (

@@ -1,7 +1,8 @@
 import "@splidejs/react-splide/css";
 import { FullWidthContent } from "@/components/Sections";
+import { cn } from "@/lib/utils";
 
-const IndustryBenefits = ({ title, subTitle, detail, benefits }) => {
+const IndustryBenefits = ({ title, subTitle, detail, benefits,slug }) => {
   return (
     <section className="bg-secondary lg:pt-5">
       <FullWidthContent className="min-h-[400px] lg:pt-10">
@@ -19,7 +20,10 @@ const IndustryBenefits = ({ title, subTitle, detail, benefits }) => {
                 return (
                   <li
                     key={benefit.id}
-                    className="text-secondary text-center md:w-[20%] md:max-w-[200px]"
+                    className={cn(
+                      "text-secondary text-center md:w-[20%] max-w-[180px] mx-auto md:max-w-[200px]",
+                      slug === "printed-circuit-boards" && "max-w-[200px]"
+                    )}
                   >
                     <div className="w-[50px] h-[50px] font-pop700 mx-auto mb-4 grid place-content-center rounded-full bg-red text-lg">
                       {`0${ind + 1}`.slice(-2)}

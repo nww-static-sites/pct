@@ -2,13 +2,11 @@ export const BlogsContent = [
   {
     id: 0,
     title: "The Science Behind Parylene: Unraveling its Mysteries",
-    excerption: `Learn why these pillar page examples
-      stand out. And get tips for your own
-      pillar page creation efforts.`,
+    excerption: `Extreme environments pose unique challenges to electronic components. In this blog post, we delve into the world of conformal coating in extreme conditions, exploring the challenges faced, the significance of effective coating, and the role Parylene plays in providing robust solutions.`,
     author: "Mjubas",
     date: "Jun 22, 2023",
     readTime: "12 min read",
-    image: "/images/blogs/blog-one.webp",
+    image: "/images/blogs/main-image-blog1.png",
     slug: "The-Science-Behind-Parylene-Unraveling-its-Mysteries",
     tableOfContent: [
       {
@@ -168,10 +166,8 @@ export const BlogsContent = [
   {
     id: 1,
     title: "Conformal Coating Time Breakdown: Step-by-Step Guide",
-    excerption: `Learn why these pillar page examples
-        stand out. And get tips for your own
-        pillar page creation efforts.`,
-    image: "/images/blogs/main-image-blog2.jpeg",
+    excerption: `Extreme environments pose unique challenges to electronic components. In this blog post, we delve into the world of conformal coating in extreme conditions, exploring the challenges faced, the significance of effective coating, and the role Parylene plays in providing robust solutions.`,
+    image: "/images/blogs/main-image-blog2.png",
     detail: `At PCT, we prioritize transparency in every step of our conformal coating process. We recognize the significance of time in delivering exceptional services. This article offers insights into the meticulous journey from product arrival to departure, focusing on the time it takes for conformal coating and the factors influencing turnaround times.
         
         
@@ -250,9 +246,7 @@ export const BlogsContent = [
   {
     id: 2,
     title: "Outgassing",
-    excerption: `Learn why these pillar page examples
-        stand out. And get tips for your own
-        pillar page creation efforts.`,
+    excerption: `Extreme environments pose unique challenges to electronic components. In this blog post, we delve into the world of conformal coating in extreme conditions, exploring the challenges faced, the significance of effective coating, and the role Parylene plays in providing robust solutions.`,
     image: "/images/blogs/main-image-blog3.png",
     detail:
       "Now, I know what you’re thinking and no I’m not talking about that kind of gas.  Yes, outgassing is a release of any trapped gas or vapor but it’s not the same kind of gas.",
@@ -297,13 +291,11 @@ export const BlogsContent = [
     id: 3,
     title:
       "Conformal Coating for Extreme Environments: Challenges and Solutions",
-    excerption: `Learn why these pillar page examples
-    stand out. And get tips for your own
-    pillar page creation efforts.`,
+    excerption: `Extreme environments pose unique challenges to electronic components. In this blog post, we delve into the world of conformal coating in extreme conditions, exploring the challenges faced, the significance of effective coating, and the role Parylene plays in providing robust solutions.`,
     author: "Mjubas",
     date: "Jun 22,2022",
     readTime: "12 min read",
-    image: "/images/blogs/main-image-blog4.jpg",
+    image: "/images/blogs/main-image-blog4.png",
     slug: "Conformal-Coating-for-Extreme-Environments-Challenges-and-Solutions",
     tableOfContent: [
       {

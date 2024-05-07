@@ -134,7 +134,7 @@ const ParyleneDimer = () => {
               barrier and dielectric properties while also having the fastest
               deposition rate.
             </p>
-            <ul className="inline-block mx-auto max-w-[260px] md:max-w-[320px] lg:max-w-none text-left space-y-2 mb-5 pl-2 list-image-[url(/images/icons/list-check.svg)]">
+            <ul className="inline-block mx-auto max-w-[320px] md:max-w-[320px] lg:max-w-none text-left space-y-2 mb-5 pl-2 list-image-[url(/images/icons/list-check.svg)]">
               <li className="ml-8">
                 <p className="-translate-y-2 font-pop400">
                   {

@@ -476,7 +476,7 @@ export const industriesServed = [
         title: "Parylene Conformal Coating for Medical Devices",
         detail: `As medical devices become smaller and more compact, the use of Parylene coatings finds increasing value due to its molecular level deposition. Thin film, pinhole-free Parylene conformal coatings provide the ultimate protection for life-saving devices and instruments in the medical industry. Inert, vacuum deposited Parylene is biocompatible and biostable and offers excellent dry-film lubricity, thermal stability, moisture, chemical and dielectric barrier protection. Additionally, Parylene is FDA-approved (with a USP XXII, Class VI biocompatibility rating) and is safe for use within the body.
         ​
-        PCT Parylene is USP Class VI Approved
+        <a href="https://www.pctconformalcoating.com/news/pct-parylene-is-usp-class-vi-approved" target="_blank" class="underline">PCT Parylene is USP Class VI Approved<a/>
         Parylene is a thin, vacuum-deposited polymer. It differs from conventional coatings in that it is deposited on objects at room temperature as a film, and does not use solvents, catalysts, plasticizers, or other feature-enhancing additives. It is based on a high-purity raw material called di-paraxylylene, which is a white, crystalline powder. A vacuum and thermal process converts the powder to a polymer film, which is formed on substrates at room temperature.`,
         buttonText: "Contact Us Now",
         buttonLink: "",
