@@ -136,7 +136,7 @@ const GetInTouchForm = ({ title, detail, className }) => {
         });
       }
     } catch (e) {
-      console.log(e);
+      console.error(e);
       const error = JSON?.parse(e);
       if (error?.length && error[0]?.message) {
         updateForm({
