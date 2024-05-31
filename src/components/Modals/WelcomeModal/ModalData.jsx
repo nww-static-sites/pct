@@ -8,7 +8,7 @@ const ModalData = ({onClose}) => {
         <div className="hidden md:block md:flex-1 relative ">
           <Image
             src={"/images/welcome-form.jpg"}
-            className="w-full h-auto md:h-full object-cover max-h-[635px]"
+            className="w-full h-auto md:h-full object-cover max-h-[535px] 2xl:max-h-[635px]"
             alt=""
             width={642}
             height={635}

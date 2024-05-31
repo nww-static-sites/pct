@@ -52,7 +52,7 @@ const HorizontalGuideForm = ({ className }) => {
             className={`${button.icon} ${button.black} w-full lg:ml-3 p-4 before:bg-gret hover:bg-gret`}
           >
             Download
-            {form?.disabled === false && (
+            {!form?.disabled && (
               <svg
                 width="19"
                 height="18"
