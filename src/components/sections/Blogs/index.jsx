@@ -40,7 +40,7 @@ export default function Blogs() {
       <section className="pt-10 md:py-12 bg-secondary">
         <FullWidthContent className="flex flex-col items-center md:items-start lg:flex-row gap-x-10">
           <AllBlogs />
-          <div className="hidden lg:block pt-12 px-3 w-full md:w-[354px] mx-auto sticky top-[36px]">
+          <div className="hidden lg:block pt-12 px-3 w-full md:w-[354px] mx-auto sticky top-[54px]">
             <div className="text-center text-secondary bg-black rounded-2xl px-4 py-9 max-w-[424px] lg:max-w-[324px] mx-auto shadow-[0px_4px_29px_0px] shadow-gret28">
               <h2 className="font-rob700 md:text-3xl mb-3 mx-2">
                 Schedule a Call With Us

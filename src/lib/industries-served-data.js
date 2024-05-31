@@ -603,7 +603,7 @@ export const industriesServed = [
         detail: "Coating Options For All Your Protective Needs.",
         buttonText: "Get in touch",
         buttonLink: "",
-        formTheme: "bg-primary45"
+        formTheme: "md:bg-primary45"
       },
       reliability: {
         image: "/images/industries/printed-circuit-boards/reliability.png",

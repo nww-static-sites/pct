@@ -45,7 +45,7 @@ const GuideForm = ({ title, detail, className, themeColor, formTheme }) => {
             id="firstName"
             className={cn(
               inputClasses,
-              formTheme && formTheme
+              formTheme && formTheme,
             )}
             placeholder="First Name"
           />

@@ -50,7 +50,7 @@ export default function OpenPosition({ slug }) {
             ? career?.other?.map((item) => {
                 return (
                   <div key={item.title} className="mb-5">
-                    <h2 className="text-[20px] md:text-2xl mb-3">{item.title}</h2>
+                    <h2 className="text-[20px] font-rob500 md:text-2xl mb-3">{item.title}</h2>
                     {item.detail ? (
                       <p className="text-[13px] md:text-[15px]">{item.detail}</p>
                     ) : (
@@ -73,7 +73,7 @@ export default function OpenPosition({ slug }) {
             : ""}
 
           <AnimateButton
-            className={`${button.red} w-full before:bg-primary hover:bg-primary my-6`}
+            className={`${button.red} w-full before:bg-primary rounded-sm hover:bg-primary my-6`}
             onClick={() => setIsOpen(true)}
           >
             Apply Now

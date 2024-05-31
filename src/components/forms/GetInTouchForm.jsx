@@ -269,7 +269,7 @@ const GetInTouchForm = ({ title, detail, className }) => {
 
         <AnimateButton
           disabled={form.disabled}
-          className={`${button.red} w-full before:bg-primary hover:bg-primary hover:before:scale-[100]`}
+          className={`${button.red} w-full before:bg-primary hover:bg-primary rounded-sm hover:before:scale-[100]`}
         >
           {form.disabled ? "Sending..." : "Send"}
         </AnimateButton>

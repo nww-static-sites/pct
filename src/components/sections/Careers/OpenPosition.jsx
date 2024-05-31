@@ -33,10 +33,10 @@ export default function OpenPositions() {
                   )}
                 >
                   <div className="flex-1 w-full">
-                    <h4 className="text-[16px] md:text-[20px] mb-1">
+                    <h4 className="text-[16px] md:text-[20px] mb-1 font-rob500">
                       {career.title}
                     </h4>
-                    <p className="text-gret text-xs">{career.jobType}</p>
+                    <p className="text-gret text-xs font-rob500">{career.jobType}</p>
                   </div>
                   <Button
                     onClick={() => route.push(`/open-position/${career.slug}`)}

@@ -10,7 +10,7 @@ export default function WhyJoinTeam() {
     data: { whyJoinTeams },
   } = useContext(DesignContext);
   return (
-    <section className="md:py-10 bg-secondary">
+    <section className="pt-10 md:py-10 bg-secondary">
       <FullWidthContent>
         <h2 className="text-sm font-rob700 text-center tracking-widest text-red mb-1">
           WHY JOIN TEAM

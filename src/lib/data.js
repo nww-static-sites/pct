@@ -24,19 +24,22 @@ export const headerSocialList = [
     id: 0,
     value: "",
     href: "https://www.facebook.com/ParaCoat/",
-    icon: "/images/icons/social/social_facebook_icon.svg",
+    icon: "/images/icons/social/facebook.svg",
+    iconSize: 18,
   },
   {
     id: 1,
     value: "",
     href: "https://www.linkedin.com/company/para-coat-technologies-inc-",
-    icon: "/images/icons/social/linkedin_social_icon.svg",
+    icon: "/images/icons/social/linkedin-icon.svg",
+    iconSize: 18,
   },
   {
     id: 2,
     value: "",
     href: "https://twitter.com/paracoattech?lang=en",
-    icon: "/images/icons/social/twitter_bird_icon.svg",
+    icon: "/images/icons/social/twitter-x.svg",
+    iconSize: 18,
   },
 ];
 
@@ -44,37 +47,45 @@ export const headerNavList = [
   {
     id: 0,
     value: "Home",
-    href: "/",
+    href: ["/"],
   },
   {
     id: 1,
     value: "Services",
-    href: "",
+    href: ["services/polyurethane", "/services/parylene", "/services/epoxy", "/services/silicone", "/services/acrylic"],
   },
   {
     id: 2,
     value: "About Us",
-    href: "/about",
+    href: ["/about"],
   },
   {
     id: 3,
     value: "Industries Served",
-    href: "",
+    href: [
+      "/industries-served/automotive",
+      "/industries-served/consumer-electronics",
+      "/industries-served/defense-and-aerospace",
+      "/industries-served/elastomers",
+      "/industries-served/leds",
+      "/industries-served/medical",
+      "/industries-served/printed-circuit-boards",
+    ],
   },
   {
     id: 4,
     value: "Blog",
-    href: "/blog",
+    href: ["/blog"],
   },
   {
     id: 5,
     value: "Careers",
-    href: "/careers",
+    href: ["/careers"],
   },
   {
     id: 6,
     value: "Dimer & Machine Sales",
-    href: "/dimer-and-machine-sales",
+    href: ["/dimer-and-machine-sales"],
   },
 ]
 

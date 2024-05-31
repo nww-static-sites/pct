@@ -12,7 +12,7 @@ const TextWithIcon = ({
 }) => {
   return (
     <div className="flex items-center gap-x-2">
-      {leftIcon ? <Image src={leftIcon} alt="" className={`w-auto ${iconSize ? `h-[${iconSize}px]` : "h-[18px]"}`} width={iconSize ? iconSize : 18} height={iconSize ? iconSize : 18} /> : ""}
+      {leftIcon ? <Image src={leftIcon} alt="" className={`w-auto ${iconSize ? `h-[${iconSize}px]` : "h-[14px]"}`} width={iconSize ? iconSize : 14} height={iconSize ? iconSize : 14} /> : ""}
       {text ? (
         <h1
           className={cn(

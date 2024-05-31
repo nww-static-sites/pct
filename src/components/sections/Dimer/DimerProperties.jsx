@@ -6,7 +6,7 @@ const DimerProperties = () => {
   return (
     <section className="bg-secondary pt-9 md:pt-[72px]">
       <FullWidthContent className="text-center mb-6">
-        <h2 className="text-xs md:text-sm mb-1 text-red font-rob500 tracking-widest">
+        <h2 className="text-xs md:text-sm mb-1 text-red font-rob700 tracking-widest">
           PROPERTIES
         </h2>
         <h1 className="mb-11 text-[28px] md:text-5xl">Why Buy PCT’s dimer</h1>

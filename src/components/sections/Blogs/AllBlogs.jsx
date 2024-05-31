@@ -29,11 +29,11 @@ export function AllBlogs() {
               key={item.id}
               className="flex max-w-[440px] md:max-w-none flex-col md:flex-row rounded-xl shadow-[1px_2px_15px_0px] shadow-gray "
             >
-              <div className="bg-black rounded-t-xl md:rounded-l-xl md:rounded-t-none">
+              <div className="bg-black rounded-t-xl md:rounded-l-xl md:rounded-r-none">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full md:w-[40vw] lg:w-[28vw] md:max-w-[467px] object-cover object-center rounded-t-xl md:rounded-l-xl md:rounded-t-none"
+                  className="w-full h-full md:w-[40vw] lg:w-[28vw] md:max-w-[467px] object-cover object-center rounded-t-xl md:rounded-l-xl md:rounded-r-none"
                   width={467}
                   height={332}
                 />
