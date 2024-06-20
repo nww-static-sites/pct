@@ -10,7 +10,7 @@ export const ourServices = [
     slug: "parylene",
     page: {
       hero: {
-        bgImage: "/images/services/parylene-coating/hero-bg.jpg",
+        bgImage: "/images/services/parylene-coating/hero-bg.png",
         title: "Parylene Conformal Coating",
         detail:
           "We are specialists in parylene coating. Our Parylene coating services offer unparalleled protection for your components. Parylene coatings provide a thin, uniform, and pinhole-free layer of protection, ensuring excellent barrier properties against moisture, chemicals, and other environmental factors.",
@@ -18,7 +18,7 @@ export const ourServices = [
         buttonLink: "",
       },
       coating: {
-        image: "/images/services/parylene-coating/parylene-coating.jpg",
+        image: "/images/services/parylene-coating/parylene-coating.png",
         subTitle: "PARYLENE COATING",
         title: "Parylene (Type XY)",
         detail:
@@ -31,7 +31,7 @@ export const ourServices = [
       features: {
         subTitle: "FEATURES",
         title: "Parylene Coating Properties",
-        image: "/images/services/parylene-coating/parylene-feature.jpg",
+        image: "/images/services/parylene-coating/parylene-feature.png",
         properties: [
           {
             id: 0,
@@ -116,11 +116,11 @@ export const ourServices = [
     shortDetail:
       "Polyurethane coatings are available as either single or two-component formulations.",
     image: "/images/polyurethane.png",
-    mainImage: "/images/polyurethene.jpg",
+    mainImage: "/images/polyurethene1.png",
     slug: "polyurethane",
     page: {
       hero: {
-        bgImage: "/images/services/polyurethane-coating/hero-bg.jpg",
+        bgImage: "/images/services/polyurethane-coating/hero-bg.png",
         title: "Polyurethane Conformal Coating",
         detail:
           "Experience unmatched protection and durability with our polyurethane coating services. Our advanced polyurethane coatings offer a resilient barrier against moisture, chemicals, abrasion, and more, ensuring prolonged lifespan and performance for your components.",
@@ -128,7 +128,7 @@ export const ourServices = [
         buttonLink: "",
       },
       coating: {
-        image: "/images/services/polyurethane-coating/coating.jpg",
+        image: "/images/services/polyurethane-coating/coating.png",
         subTitle: "POLYURETHANE COATING",
         title: "Polyurethane (Type UR)",
         detail: `Polyurethane coatings are available as either single or two-component formulations. Both formulations provide excellent humidity resistance and far greater chemical resistance than Acrylic coatings. Single component Polyurethanes, while easy to apply, enjoy long pot life but sometimes require very lengthy cure cycles to achieve full or optimum cure. In some instances, the cure cycle can be accelerated by the judicious application of heat. \nTwo component formulations can reach optimum cure properties in as little as one to three hours with the assistance of heat. However, when compared to single component formulations, two-component formulas can have a relatively short pot life sometimes making them difficult to work with. Removal of Polyurethane coatings can be difficult due to their very high resistance to solvents. For single-components, the preferred method of removal is via burn through for spot repair, while the use of specially formulated strippers enables the user to completely remove the coating from an entire PCB assembly for more wide-ranging rework concerns. These products do not necessarily represent our complete Urethanes range. Mil-I-46058C and IPC-CC-830 approved.`,
@@ -140,7 +140,7 @@ export const ourServices = [
       features: {
         subTitle: "FEATURES",
         title: "Polyurethane Coating Properties",
-        image: "/images/services/polyurethane-coating/feature.jpg",
+        image: "/images/services/polyurethane-coating/feature.png",
         properties: [
           {
             id: 0,
@@ -195,7 +195,7 @@ export const ourServices = [
     shortDetail:
       "Epoxy resins exhibit good abrasive and chemical resistance, as well as reasonable humidity resistance.",
     image: "/images/epoxy.png",
-    mainImage: "/images/epoxy.jpg",
+    mainImage: "/images/epoxy1.png",
     slug: "epoxy",
     page: {
       hero: {
@@ -207,7 +207,7 @@ export const ourServices = [
         buttonLink: "",
       },
       coating: {
-        image: "/images/services/epoxy-coating/coating.jpg",
+        image: "/images/services/epoxy-coating/coating.png",
         subTitle: "EPOXY COATING",
         title: "Epoxy (Type ER)",
         detail: `Epoxy resins (ER) are usually available as two-part compounds that start curing upon mixing, but single part coatings that can be cured thermally or with UV exposure, are also available. Epoxy resins exhibit good abrasive and chemical resistance, as well as reasonable humidity resistance. The coating is virtually impossible to remove and rework requires burning through with a soldering iron. A buffer is recommended around delicate components, since film shrinkage occurs during polymerization. The shrinkage can be minimized by curing at a low temperature. Epoxy resins can be applied by brush, spray, or dip-coating.`,
@@ -274,7 +274,7 @@ export const ourServices = [
         buttonLink: "",
       },
       coating: {
-        image: "/images/services/silicone-coating/coating.jpg",
+        image: "/images/services/silicone-coating/coating.png",
         subTitle: "SILICONE COATING",
         title: "Silicone (Type SR)",
         detail: `Silicone Conformal Coating is a transparent, soft, flexible coating which offers excellent moisture, corrosion and humidity resistance, good dielectric properties, and has exceptional light transmission capabilities for solar applications. It provides good chemical resistance, salt spray resistance and are very flexible. It functions well in high temperate applications and is resistant to UV light and dirt pick-up. This coating can be “solder-through” for easy repair. However, silicones are not solvent soluble and require chemical strippers for removal or repairs. MIL-I-46058C and IPC-CC-830 approved.`,
@@ -335,7 +335,7 @@ export const ourServices = [
     slug: "acrylic",
     page: {
       hero: {
-        bgImage: "/images/services/acrylic-coating/hero-bg.jpg",
+        bgImage: "/images/services/acrylic-coating/hero-bg.png",
         title: "Acrylic Conformal Coating",
         detail:
           "Elevate the durability and performance of your components with our acrylic coating services. Our advanced acrylic coatings provide a robust protective layer, enhancing resistance to abrasion, weathering, and corrosion.",
@@ -343,7 +343,7 @@ export const ourServices = [
         buttonLink: "",
       },
       coating: {
-        image: "/images/services/acrylic-coating/coating.jpg",
+        image: "/images/services/acrylic-coating/coating.png",
         subTitle: "ACRYLIC COATING",
         title: "Acrylic (Type AR)",
         detail: `Acrylic conformal coatings are perhaps the most popular of all conformal coating materials due to their ease of application, removal and forgiving nature. Acrylics dry rapidly, reaching optimum physical properties in minutes, are fungus resistant, provide long pot life, and moderate dielectric constant. Additionally, acrylic coating gives off little or no heat during cure, eliminating potential damage to heat-sensitive components. They do not shrink during cure and have good humidity resistance and exhibit low glass transition temperatures. Mil-I-46058C and IPC-CC-830 approved.\nAcrylic coating protects electric circuit against moisture, dirt, dust, thermal shocks, and scratches that could corrode, short circuit, or otherwise damage the electric component. It insulates against high-voltage arcing, shorts, and static discharges. Additionally, this coating provides a high dielectric withstand voltage that allows traces to be put closer together helping with miniaturization.\n\nAcrylic Coatings (Typical Thickness: 1-3 mils)`,
@@ -355,7 +355,7 @@ export const ourServices = [
       features: {
         subTitle: "FEATURES",
         title: "Acrylic Coating Properties",
-        image: "/images/services/acrylic-coating/feature.jpg",
+        image: "/images/services/acrylic-coating/feature.png",
         properties: [
           {
             id: 0,

@@ -27,7 +27,7 @@ const AboutPCT = () => {
           >
             <Image
               className="w-full h-auto mb-8 max-h-[420px] md:max-h-[320px] lg:max-h-none lg:mb-0 lg:w-[36vw] lg:max-w-[519px] object-cover"
-              src="/images/about-pct.jpg"
+              src="/images/home-about-img.png"
               alt=""
               width={519}
               height={727}
