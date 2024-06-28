@@ -73,7 +73,7 @@ const GetInTouchForm = ({ title, detail, className }) => {
       const toAdminEmail = process.env.NEXT_PUBLIC_TO_ADMIN_EMAIL;
 
       const formAdmin = {
-        email: toAdminEmail,
+        email: toAdminEmail.split(","),
         title: `New Submission of Contact Form`,
         text: `The details of Form Submission: \n ${JSON.stringify(formData)} 
         \n ${attachmentLink ? `File Attached: ${attachmentLink}` : ""}

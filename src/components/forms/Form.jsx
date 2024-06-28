@@ -44,7 +44,7 @@ export const Form = ({
       // For Admin
       const toAdminEmail = process.env.NEXT_PUBLIC_TO_ADMIN_EMAIL;
       const formAdmin = {
-        email: toAdminEmail,
+        email: toAdminEmail.split(","),
         title: subjectForAdmin,
         text: `The details of Form Submission: \n ${JSON.stringify(formData)}`,
         html: `The details of submission below: <br /><br /> ${Object.keys(
