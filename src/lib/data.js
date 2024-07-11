@@ -253,7 +253,7 @@ export const MeetTheTeam = [
   {
     id: 3,
     name: "Ben Haynes",
-    designation: "Opperations Manager",
+    designation: "Operations Manager",
     image: "/images/BenHaynes.jpg",
     social:[
       {
