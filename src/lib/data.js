@@ -121,26 +121,31 @@ export const ourCertifications = [
     id: 0,
     logo: "/images/iso.png",
     bgImage: "/images/esd-bg.png",
+    link: "/docs/6643%20Para-Coat%20QMS%20RE%20012024.pdf",
   },
   {
     id: 1,
     logo: "/images/iso2.png",
     bgImage: "/images/esd-bg.png",
+    link: "/docs/6153%20Para%20Coat%20MED%20RE%20012024.pdf",
   },
   {
     id: 2,
     logo: "/images/itar.png",
     bgImage: "/images/esd-bg.png",
+    link:"",
   },
   {
     id: 3,
     logo: "/images/esd.png",
     bgImage: "/images/esd-bg.png",
+    link:"",
   },
   {
     id: 4,
     logo: "/images/mwbe.png",
     bgImage: "/images/esd-bg.png",
+    link:"",
   },
 ];
 
