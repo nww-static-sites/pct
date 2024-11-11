@@ -174,7 +174,7 @@ const Footer = () => {
                 "/docs/Para-Coat Technologies Terms and Conditions_Rev F.docx.pdf"
               }
               target="_blank"
-              download
+              // download
             >
               Terms of Service
             </Link>
