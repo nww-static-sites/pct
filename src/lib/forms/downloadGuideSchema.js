@@ -45,5 +45,5 @@ export const applicationSchema = z.object({
     .refine((file) => file?.length !== 0, "File is required")
     .refine((file) => file.size < 15000000, "Max size is 15MB."),
   phoneNumber: z.string().regex(phoneValidation, "Phone number is not valid"),
-  link: z.string().url("Invalid URL").optional(),
+  //link: z.string().url("Invalid URL").optional(),
 });
