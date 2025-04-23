@@ -251,7 +251,7 @@ const ApplyForm = ({ formTitle, detail, className, onClose }) => {
             placeholder="Link here"
             labelColor="text-primary"
             boxClassName={"col-span-2"}
-            style={{display: none}}
+            style={{display: 'none' }}
           />
 
           <div className="mb-4 col-span-2 text-left">
