@@ -226,7 +226,7 @@ export const MeetTheTeam = [
     id: 0,
     name: "Krista Rager",
     designation: "Co-Founder & CEO",
-    image: "/images/DominicAntonini.jpg",
+    image: "/images/KristinaRager.jpg",
     social:[
       {
         id: 0,
@@ -267,6 +267,13 @@ export const MeetTheTeam = [
         href: "https://www.linkedin.com/in/bhaynes99"
       }
     ]
+  },
+  {
+    id: 4,
+    name: "Al Kapadia",
+    designation: "Vice President of Sales",
+    image: "/images/AlKapadia.jpg",
+    social:[]
   },
 ];
 
