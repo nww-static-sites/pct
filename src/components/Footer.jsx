@@ -179,7 +179,7 @@ const Footer = () => {
               Terms of Service
             </Link>
           </p>
-          <p className="text-right">Copyright © 2024. All rights reserved.</p>
+          <p className="text-right">Copyright © 2025. All rights reserved.</p>
         </div>
       </FullWidthContent>
     </div>
