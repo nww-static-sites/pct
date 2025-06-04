@@ -117,7 +117,7 @@ const OurAchievements = () => {
                 <p className="text-sm lg:text-[16px]">
                   Or{" "}
                   <a
-                    href="mailto:info@paracoattechnology.ca"
+                    href="mailto:info@pctcc.com"
                     className="underline"
                   >
                     Email Us.
