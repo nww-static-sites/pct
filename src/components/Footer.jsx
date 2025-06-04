@@ -42,8 +42,8 @@ const Footer = () => {
             className="w-[22px] md:w-[29px] h-auto"
           />
           <p>
-            <Link href="mailto:info@paracoattechnology.ca">
-              info@paracoattechnology.ca
+            <Link href="mailto:info@pctcc.com">
+              info@pctcc.com
             </Link>
           </p>
         </div>
