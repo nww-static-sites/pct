@@ -1,8 +1,8 @@
 export const headerContactList = [
   {
     id: 0,
-    value: "info@paracoattechnology.ca",
-    href: "mailto:info@paracoattechnology.ca",
+    value: "info@pctcc.com",
+    href: "mailto:info@pctcc.com",
     icon: "/images/icons/envelope.svg",
   },
   {
