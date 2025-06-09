@@ -127,6 +127,9 @@
   .text-balance {
     text-wrap: balance;
   }
+  .min-h-\[560px\] {
+  min-height: 460px !important;
+}
   .text-shadow {
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: white;
