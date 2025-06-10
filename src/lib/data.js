@@ -273,7 +273,13 @@ export const MeetTheTeam = [
     name: "Al Kapadia",
     designation: "Vice President of Sales",
     image: "/images/AlKapadia.jpg",
-    social:[]
+    social:[
+      {
+        id: 0,
+        icon: "/images/icons/linkedin-outline.svg",
+        href: "https://www.linkedin.com/in/al-kapadia"
+      }
+    ]
   },
 ];
 
