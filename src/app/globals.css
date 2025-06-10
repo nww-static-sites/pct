@@ -130,6 +130,9 @@
   .min-h-\[560px\] {
   min-height: 460px !important;
 }
+  .hide-form {
+    display:none;
+  }
   .text-shadow {
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: white;
