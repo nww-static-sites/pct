@@ -18,21 +18,7 @@ export default function About() {
   } = useContext(DesignContext);
   return (
     <div>
-      <HeroSection bgImage="/images/about-us-banner.jpg">
-        <HeroContentBox
-          title={"About Us"}
-          detail={
-            "Para-Coat Technologies has been dedicated for over 10 years to providing companies with lasting protection from various industries with our certified processes and diverse set of conformal coatings fit to withstand harsh environments. We take diligence and attentiveness with every task to exceed expectations, and to give your company the highest quality service that is needed for your success."
-          }
-        />
-
-        <GuideForm
-          title={"Download Our Guide"}
-          detail={
-            "Fill the form to unlock valuable insights and expertise by downloading our guide for free."
-          }
-        />
-      </HeroSection>
+      
       <AboutEachService
         title={"Our Story"}
         subTitle={"RELIABILITY THAT LASTS"}
@@ -62,6 +48,21 @@ export default function About() {
             );
           })}
         </div>
+        <HeroSection bgImage="/images/about-us-banner.jpg">
+        <HeroContentBox
+          title={"About Us"}
+          detail={
+            "Para-Coat Technologies has been dedicated for over 10 years to providing companies with lasting protection from various industries with our certified processes and diverse set of conformal coatings fit to withstand harsh environments. We take diligence and attentiveness with every task to exceed expectations, and to give your company the highest quality service that is needed for your success."
+          }
+        />
+
+        <GuideForm
+          title={"Download Our Guide"}
+          detail={
+            "Fill the form to unlock valuable insights and expertise by downloading our guide for free."
+          }
+        />
+      </HeroSection>
       </FullWidthContent>
       <ContactUs />
     </div>
