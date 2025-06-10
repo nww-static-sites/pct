@@ -35,7 +35,7 @@ export default function About() {
         <h1 className="mb-5 md:mb-9 text-[28px] text-center md:text-5xl">
           Meet The Team
         </h1>
-        <div className="flex justify-center flex-wrap lg:flex-nowrap gap-7" style="padding-bottom: 2rem;">
+        <div className="flex justify-center flex-wrap lg:flex-nowrap gap-7 mb-5">
           {MeetTheTeam.map((item) => {
             return (
               <TeamCard
