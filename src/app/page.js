@@ -17,7 +17,12 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <HeroSection videoSrc={"/videos/hero-video-home.mp4"}>
+     
+      <WhatWeOffer />
+      <AboutPCT />
+      <OurAchievements />
+      <OurCertifications />
+     <HeroSection videoSrc={"/videos/hero-video-home.mp4"}>
         <HeroContentBox
           customH1={
             <h1 className="text-3xl md:text-6xl mb-3">
@@ -41,10 +46,6 @@ export default function Home() {
           }
         />
       </HeroSection>
-      <WhatWeOffer />
-      <AboutPCT />
-      <OurAchievements />
-      <OurCertifications />
       <ContactUs />
       <WelcomeFormModal />
     </main>
