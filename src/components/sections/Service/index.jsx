@@ -29,19 +29,7 @@ export default function Service({ slug }) {
   if (service.page) {
     return (
       <div>
-        <HeroSection bgImage={hero.bgImage} className={"py-5 md:py-10"}>
-          <HeroContentBox
-            title={hero.title}
-            detail={hero.detail}
-          />
-
-          <GuideForm
-            title={"Download Our Guide"}
-            detail={
-              "Fill the form to unlock valuable insights and expertise by downloading our guide for free."
-            }
-          />
-        </HeroSection>
+        
         <AboutEachService
           title={coating.title}
           subTitle={coating.subTitle}
@@ -57,6 +45,19 @@ export default function Service({ slug }) {
           features={features.properties}
           image={features.image}
         />
+        <HeroSection bgImage={hero.bgImage} className={"py-5 md:py-10"}>
+          <HeroContentBox
+            title={hero.title}
+            detail={hero.detail}
+          />
+
+          <GuideForm
+            title={"Download Our Guide"}
+            detail={
+              "Fill the form to unlock valuable insights and expertise by downloading our guide for free."
+            }
+          />
+        </HeroSection>
       </div>
     );
   }
