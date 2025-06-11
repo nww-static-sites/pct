@@ -91,7 +91,7 @@ const Header = () => {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5 logo-padding">
               <span className="sr-only">Para Coat Technologies</span>
               <Image
                 className="h-11 md:h-[74px] w-auto object-contain"
