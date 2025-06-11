@@ -133,6 +133,9 @@
   .hide-form {
     display:none;
   }
+  .logo-padding {
+    padding: 1rem 0;
+  }
   .text-shadow {
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: white;
