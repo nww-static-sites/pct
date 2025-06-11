@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import logo from "public/pct_logo_2x.png";
+import logo from "public/pct_logo.png";
 import { FullWidthContent } from "./Sections";
 import { useContext, useEffect, useState } from "react";
 import { DesignContext } from "@/context/design";
