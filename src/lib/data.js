@@ -281,6 +281,13 @@ export const MeetTheTeam = [
       }
     ]
   },
+   {
+    id: 5,
+    name: "Shane Sloan",
+    designation: "Accountant",
+    image: "/images/s_sloan.jpg",
+    social:[]
+  },
 ];
 
 export const Blogs = [
