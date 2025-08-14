@@ -238,7 +238,7 @@ export const MeetTheTeam = [
   {
     id: 1,
     name: "Mike Rager",
-    designation: "Co-Founder & COO",
+    designation: "Founder & COO",
     image: "/images/MikeRager.jpg",
     social:[]
   },
