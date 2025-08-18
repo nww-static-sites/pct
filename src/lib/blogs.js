@@ -1,7 +1,7 @@
 export const BlogsContent = [
   {
     id: 0,
-    title: "Para-Coat Technologies adds sales industry vet, looks to drive growth",
+    title: "Para-Coat Technologies Adds Sales Industry Vet, Looks to Drive Growth",
     excerption: `A Johnstown manufacturer that specializes in polymer coatings has added a seasoned sales and product management professional to its ranks.`,
     image: "/images/blogs-bg.jpg",
     detail:
