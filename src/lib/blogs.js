@@ -1,11 +1,87 @@
 export const BlogsContent = [
   {
     id: 0,
+    title: "Para-Coat Technologies adds sales industry vet, looks to drive growth",
+    excerption: `A Johnstown manufacturer that specializes in polymer coatings has added a seasoned sales and product management professional to its ranks.`,
+    image: "/images/blogs-bg.jpg",
+    detail:
+      "A Johnstown manufacturer that specializes in polymer coatings has added a seasoned sales and product management professional to its ranks.",
+    author: "David Hurst",
+    date: "Aug 16,2025",
+    readTime: "5 min read",
+    slug: "Para-Coat-Technologies-adds-sales-industry-vet",
+    tableOfContent: [
+      {
+        id: 0,
+        title: "",
+        image: "",
+        detail:
+          "A Johnstown manufacturer that specializes in polymer coatings has added a seasoned sales and product management professional to its ranks.",
+      },
+      {
+        id: 1,
+        title: "",
+        detail: `Officials with Para-Coat Technologies Inc., a manufacturing service provider that specializes in thin parylene coatings, said Todd Avres brings more than 25 years of proven success in medical, military, aerospace and electronics markets, with a track record of driving multi-million- dollar sales growth.`,
+        image: "",
+      },
+      {
+        id: 2,
+        title: "",
+        detail: `Over Avres’ career, he has managed high-profile OEM – original equipment manufacturer – accounts and led global expansion initiatives, Para-Coat officials said.`,
+        image: "",
+      },
+      {
+        id: 3,
+        title: "",
+        detail:
+          "His experience includes roles with Specialty Coatings Systems, security systems company Tyco International and New York telecommunications provider Precision Interconnect.",
+      },
+	{
+        id: 4,
+        title: "",
+        detail:
+          "“We are thrilled to welcome such a seasoned professional to the Para-Coat Technologies team,” said Krista Rager, CEO of Para-Coat Technologies.",
+      },
+{
+        id: 5,
+        title: "",
+        detail:
+          "“His depth of experience, global network and proven ability to deliver sustained growth will play a pivotal role as we expand our reach and enhance our service offerings for customers worldwide.” Johnstown-based Para-Coat, which has a Johns Street headquarters, announced plans earlier this year to expand its reach to the western U.S. Rager said Tuesday that the current goal is to add a West Coast location by the third quarter of 2026. The company employs 20 people.",
+      },
+{
+        id: 6,
+        title: "",
+        detail:
+          "Para-Coat also recently partnered with JWF Industries and Compass Systems to manufacture the company’s first parylene machine in Johnstown.",
+      },
+{
+        id: 7,
+        title: "",
+        detail:
+          "“With our current expansion plans for the Johnstown headquarters, having top-notch sales engineers will be the driving force behind our growth,” Rager said.",
+      },
+{
+        id: 8,
+        title: "",
+        detail:
+          "David Hurst is a reporter for The Tribune-Democrat. Follow him on Twitter and Instagram @TDDavidHurst.",
+      },
+{
+        id: 9,
+        title: "",
+        detail:
+          "Copyright (c)2025 The Tribune-Democrat, Edition The Tribune-Democrat",
+      },
+    ],
+  },
+  
+  {
+    id: 1,
     title: "The Science Behind Parylene: Unraveling its Mysteries",
     excerption: `Extreme environments pose unique challenges to electronic components. In this blog post, we delve into the world of conformal coating in extreme conditions, exploring the challenges faced, the significance of effective coating, and the role Parylene plays in providing robust solutions.`,
     author: "Mjubas",
     date: "Jun 22, 2023",
-    readTime: "12 min read",
+    readTime: "10 min read",
     image: "/images/blogs/main-image-blog1.png",
     slug: "The-Science-Behind-Parylene-Unraveling-its-Mysteries",
     tableOfContent: [
@@ -164,7 +240,7 @@ export const BlogsContent = [
   },
 
   {
-    id: 1,
+    id: 2,
     title: "Conformal Coating Time Breakdown: Step-by-Step Guide",
     excerption: `Extreme environments pose unique challenges to electronic components. In this blog post, we delve into the world of conformal coating in extreme conditions, exploring the challenges faced, the significance of effective coating, and the role Parylene plays in providing robust solutions.`,
     image: "/images/blogs/main-image-blog2.png",
@@ -244,7 +320,7 @@ export const BlogsContent = [
   },
 
   {
-    id: 2,
+    id: 3,
     title: "Outgassing",
     excerption: `Extreme environments pose unique challenges to electronic components. In this blog post, we delve into the world of conformal coating in extreme conditions, exploring the challenges faced, the significance of effective coating, and the role Parylene plays in providing robust solutions.`,
     image: "/images/blogs/main-image-blog3.png",
@@ -288,7 +364,7 @@ export const BlogsContent = [
   },
 
   {
-    id: 3,
+    id: 4,
     title:
       "Conformal Coating for Extreme Environments: Challenges and Solutions",
     excerption: `Extreme environments pose unique challenges to electronic components. In this blog post, we delve into the world of conformal coating in extreme conditions, exploring the challenges faced, the significance of effective coating, and the role Parylene plays in providing robust solutions.`,
