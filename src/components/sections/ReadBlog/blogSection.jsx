@@ -15,8 +15,8 @@ export const BlogSection = ({ blog }) => {
         <span className="text-red">{author}</span> | {date} | {readTime}
       </p>
       <div className="mb-8">
-        <h2 className="text-2xl font-rob500 mb-3">Table of Content</h2>
-        <ul className="list-disc space-y-1 ml-5">
+        <h2 className="text-2xl font-rob500 mb-3 hide_contents">Table of Content</h2>
+        <ul className="list-disc space-y-1 ml-5 hide_contents">
           {tableOfContent.length
             ? tableOfContent.map((content) => {
                 return (
