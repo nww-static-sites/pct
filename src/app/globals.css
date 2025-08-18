@@ -130,7 +130,7 @@
   .min-h-\[560px\] {
   min-height: 460px !important;
 }
-  .hide-form {
+  .hide-form, .hide_contents{
     display:none;
   }
   .logo-padding {
