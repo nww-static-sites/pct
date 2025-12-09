@@ -10,7 +10,7 @@ import HomeModal from "@/components/Modals/WelcomeModal/HomeModal";
 import { WelcomeFormModal } from "@/components/WelcomeFormModal";
 
 export const metadata = {
-  title: "PCT Conformal Coating",
+  title: "PCT Conformal Coating Services - Para-Coat Technologies",
   // description: "PCT Conformal Coating",
 };
 
