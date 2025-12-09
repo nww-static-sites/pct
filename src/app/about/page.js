@@ -1,7 +1,7 @@
 import About from "@/components/sections/AboutUs";
 
 export const metadata = {
-  title: "About Us",
+  title: "About Para-Coat Technologies (PCT)",
   // description: "About PCT Conformal Coating",
 }
 
