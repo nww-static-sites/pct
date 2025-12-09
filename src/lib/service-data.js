@@ -1,7 +1,7 @@
 export const ourServices = [
   {
     id: 0,
-    title: "PARYLENE",
+    title: "Parylene Conformal Coating Services",
     title1: "Parylene",
     shortDetail:
       "Parylene is a common generic name for a unique series of polymers based on paraxylene.",
